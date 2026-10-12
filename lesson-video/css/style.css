@@ -1,0 +1,39 @@
+@font-face { font-family: Cairo; font-weight: 700; src: url(../assets/fonts/cairo-arabic-700-normal.woff2) format('woff2'); unicode-range: U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FEFC; }
+@font-face { font-family: Cairo; font-weight: 700; src: url(../assets/fonts/cairo-latin-700-normal.woff2) format('woff2'); unicode-range: U+0000-00FF; }
+
+:root { --ink: #1d1d1b; --paper: #f4ecdc; --green: #2e6a4a; --panel: #faf6ee; --line: #d8ccb4; }
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: #2a2a28; color: var(--ink); font: 15px/1.4 system-ui, sans-serif; }
+#app { display: flex; gap: 16px; height: 100%; padding: 16px; }
+#stageWrap { flex: 1 1 auto; display: flex; align-items: center; justify-content: center; min-width: 0; }
+#stage { position: relative; background: var(--paper); box-shadow: 0 10px 40px rgba(0,0,0,.45); overflow: hidden; }
+#board { display: block; width: 100%; height: 100%; }
+#caption { position: absolute; left: 6%; right: 6%; bottom: 23%; text-align: center; font-family: Cairo, sans-serif; font-weight: 700; color: #fff; background: rgba(29,29,27,.78); border-radius: 12px; padding: .35em .7em; font-size: 2.1cqw; pointer-events: none; }
+#stage.h #caption { bottom: 4%; font-size: 1.5cqw; }
+#stage { container-type: inline-size; }
+#stage.safe::after { content: ''; position: absolute; inset: 11.5% 12% 20% 4%; border: 2px dashed rgba(178,58,43,.8); pointer-events: none; }
+#panel { flex: 0 0 380px; background: var(--panel); border-radius: 12px; padding: 16px; overflow: auto; }
+h1 { font-size: 18px; margin: 0 0 12px; }
+.row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 10px 0; }
+button, select { font: inherit; padding: 6px 12px; border-radius: 8px; border: 1px solid var(--line); background: #fff; cursor: pointer; }
+button#play { background: var(--green); color: #fff; border-color: var(--green); min-width: 96px; }
+#time { font-variant-numeric: tabular-nums; margin-left: auto; }
+#seekWrap { position: relative; padding-top: 10px; }
+#seek { width: 100%; accent-color: var(--green); }
+#markers { position: absolute; left: 0; right: 0; top: 0; height: 10px; }
+#markers span { position: absolute; top: 0; width: 2px; height: 10px; background: var(--green); transform: translateX(-1px); cursor: pointer; }
+#scenes { padding-left: 22px; margin: 12px 0; }
+#scenes li { padding: 4px 6px; border-radius: 6px; cursor: pointer; }
+#scenes li:hover { background: #efe6d4; }
+#scenes li.on { background: #dfeadf; font-weight: 600; }
+#scenes small { color: #6b6457; font-variant-numeric: tabular-nums; }
+.note { color: #6b6457; font-size: 13px; }
+@media (max-width: 900px) {
+  #app { flex-direction: column; height: auto; padding: 16px; }
+  #panel { flex: none; }
+}
+/* render mode: the stage is the whole page at native resolution */
+body.render { background: var(--paper); }
+body.render #app { padding: 0; display: block; }
+body.render #panel { display: none; }
+body.render #stage { box-shadow: none; }
