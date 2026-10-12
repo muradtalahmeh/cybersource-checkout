@@ -8,7 +8,8 @@
   "Every on-screen word exists in the audio. Numbered badges (1/2/3) count the 'تحديات' the speaker lists; they add no words.",
   "The source carries burned-in single-word captions at 72–75 % of its height; they remain visible inside the presenter frame. New text sits outside that zone.",
   "Source jump cuts at 26.71 s, 40.71 s and 52.42 s are used as scene boundaries so no new cut is introduced.",
-  "No SFX assets are available in this environment; every sfx field is a cue for later, not an applied sound. The original audio stream is copied unchanged."
+  "No SFX assets are available in this environment; every sfx field is a cue for later, not an applied sound. The original audio stream is copied unchanged.",
+  "v0.2: cards replace the presenter frame (reference behaviour), two-tier kinetic text (lead + keyword), gold secondary words, full-bleed finale. Photo slots render a labelled placeholder until the file exists in projects/ref-fitness/assets/photos/."
  ],
  "scenes": [
   {
@@ -32,7 +33,8 @@
      "font": "kinetic 132/800",
      "color": "#FFFFFF",
      "anim": "fade-up",
-     "slot": "kinetic"
+     "slot": "kinetic",
+     "lead": "مشوار الرشاقة والعناية بالجسم"
     },
     {
      "text": "ملان تحديات",
@@ -76,7 +78,8 @@
      "font": "kinetic 132/800",
      "color": "#FFFFFF",
      "anim": "fade-up + strike-through (burgundy line draws 6.6→6.95)",
-     "slot": "kinetic"
+     "slot": "kinetic",
+     "lead": "ما عمري حكيت لك"
     }
    ],
    "asset": {
@@ -120,7 +123,8 @@
      "font": "kinetic 132/800",
      "color": "#FFFFFF",
      "anim": "punch",
-     "slot": "kinetic"
+     "slot": "kinetic",
+     "lead": "تلاقي حالك"
     },
     {
      "text": "تمارين بالبيت",
@@ -130,7 +134,8 @@
      "font": "kinetic 120/800",
      "color": "#10B981",
      "anim": "slide-right",
-     "slot": "kinetic"
+     "slot": "kinetic",
+     "lead": "عشان تلعبي"
     },
     {
      "text": "صعب",
@@ -184,7 +189,8 @@
      "font": "kinetic 132/800",
      "color": "#FFFFFF",
      "anim": "punch",
-     "slot": "kinetic"
+     "slot": "kinetic",
+     "lead": "تقاومي"
     },
     {
      "text": "تنامي بدري",
@@ -192,7 +198,7 @@
      "t1": 14.0,
      "pos": "kinetic-zone center",
      "font": "kinetic 132/800",
-     "color": "#10B981",
+     "color": "#F59E0B",
      "anim": "slide-right",
      "slot": "kinetic"
     }
@@ -256,13 +262,13 @@
    "start": 15.0,
    "end": 21.0,
    "words": "وإنك تختاري الأكل الصحي وتسيبي الأكل الغير صحي نهاية الأسبوع. برضه صعب",
-   "mode": "B+C",
+   "mode": "B",
    "purpose": "Challenge 3 as an editorial comparison card: healthy food vs. unhealthy weekend food; presenter in PiP; 'صعب' stamp lands on the card.",
    "presenter": {
-    "visible": true,
-    "rect": "pip"
+    "visible": false,
+    "rect": "hidden"
    },
-   "framing": "PiP 336x448 at (690,1380), source cropped to head/shoulders (crop scale 1.9, top 4 %).",
+   "framing": "Card replaces the presenter frame (same rect 964x1440); presenter hidden, voice continues.",
    "texts": [
     {
      "text": "3",
@@ -316,9 +322,9 @@
     }
    ],
    "asset": {
-    "type": "svg-generated",
-    "source": "assets/svg/apple.svg (tile A, teal) + assets/svg/burger.svg (tile B, burgundy)",
-    "status": "to generate programmatically"
+    "type": "photo",
+    "source": "projects/ref-fitness/assets/photos/healthy-food.jpg (tile A) + junk-food.jpg (tile B)",
+    "status": "MISSING — placeholder rendered until a licensed/user photo is supplied"
    },
    "transition_in": "card slides up + fades 0.42 s; presenter morphs full→PiP 0.5 s",
    "transition_out": "card fades/slides down 0.4 s; presenter morphs PiP→full",
@@ -327,11 +333,11 @@
    "safe_area": "card x 54–1026, y 150–1330; PiP bottom-right; nothing over the face in PiP.",
    "review_notes": "The icons are simple geometric SVGs, not photos. The card has one idea (healthy vs. unhealthy).",
    "card": {
-    "template": "compare",
+    "template": "photo-compare",
     "exit": "down",
-    "icons": {
-     "tileA": "apple",
-     "tileB": "burger"
+    "photos": {
+     "a": "healthy-food",
+     "b": "junk-food"
     }
    }
   },
@@ -356,7 +362,8 @@
      "font": "kinetic 140/800",
      "color": "#10B981",
      "anim": "punch + glow + tracking-in",
-     "slot": "kinetic"
+     "slot": "kinetic",
+     "lead": "تعالي أقول لك اللي"
     }
    ],
    "asset": {
@@ -390,7 +397,8 @@
      "font": "kinetic 132/800",
      "color": "#FFFFFF",
      "anim": "punch",
-     "slot": "kinetic"
+     "slot": "kinetic",
+     "lead": "إنه"
     },
     {
      "text": "طلعة درج",
@@ -400,13 +408,14 @@
      "font": "kinetic 132/800",
      "color": "#06B6D4",
      "anim": "slide-right",
-     "slot": "kinetic"
+     "slot": "kinetic",
+     "lead": "من أقل"
     }
    ],
    "asset": {
-    "type": "svg-generated",
-    "source": "assets/svg/stairs.svg, 160 px, cyan stroke, appears 25.9",
-    "status": "to generate"
+    "type": "photo",
+    "source": "assets/photos/stairs.jpg beside «طلعة درج» (25.9–26.73), fallback: assets/svg/stairs.svg",
+    "status": "MISSING — svg fallback"
    },
    "transition_in": "none",
    "transition_out": "hard cut on the source's own jump cut at 26.71",
@@ -417,10 +426,11 @@
    "icons": [
     {
      "svg": "stairs",
+     "photo": "stairs",
      "t0": 25.9,
      "t1": 26.73,
      "slot": "kinetic-icon",
-     "size": 170,
+     "size": 200,
      "color": "#06B6D4"
     }
    ]
@@ -446,7 +456,8 @@
      "font": "kinetic 120/800",
      "color": "#FFFFFF",
      "anim": "slide-right",
-     "slot": "kinetic"
+     "slot": "kinetic",
+     "lead": "إنك"
     },
     {
      "text": "ما بتحبي الصور",
@@ -454,9 +465,10 @@
      "t1": 31.0,
      "pos": "kinetic-zone center",
      "font": "kinetic 120/800",
-     "color": "#06B6D4",
+     "color": "#F59E0B",
      "anim": "fade-up",
-     "slot": "kinetic"
+     "slot": "kinetic",
+     "lead": "لأنك"
     }
    ],
    "asset": {
@@ -474,13 +486,13 @@
    "start": 31.0,
    "end": 40.73,
    "words": "وإنه تنحرمي لعب أولادك بالحديقة لأنك مش قادرة تلحقي وراهم. وإنه يجي الصيف وتضلك تشيلي هم اللبس وتدوري على أشياء تخبي جسمك",
-   "mode": "B+C",
+   "mode": "B",
    "purpose": "Editorial list card 'الأصعب': three consequences appear as they are spoken; presenter in PiP.",
    "presenter": {
-    "visible": true,
-    "rect": "pip"
+    "visible": false,
+    "rect": "hidden"
    },
-   "framing": "PiP as SC06",
+   "framing": "Card replaces the presenter frame (same rect 964x1440); presenter hidden, voice continues.",
    "texts": [
     {
      "text": "أصعب بكثير",
@@ -524,9 +536,9 @@
     }
    ],
    "asset": {
-    "type": "svg-generated",
-    "source": "assets/svg/park.svg, sun-shirt.svg, hide.svg — 96 px item icons, teal stroke",
-    "status": "to generate"
+    "type": "photo",
+    "source": "assets/photos/kids-park.jpg (31.75) → summer-clothes.jpg (36.25) → hide-body.jpg (39.75), each replaces the previous as the dominant photo",
+    "status": "MISSING — placeholders"
    },
    "transition_in": "card slides up 0.42 s; presenter full→PiP",
    "transition_out": "card slides left and is replaced by SC11 card (0.4 s) on the source jump cut 40.71",
@@ -535,13 +547,13 @@
    "safe_area": "card y 150–1330, PiP bottom-right",
    "review_notes": "Card title 'أصعب بكثير' is the speaker's exact phrase (22.25 s). Items are compressed to words he says.",
    "card": {
-    "template": "list",
+    "template": "photo-list",
     "exit": "left",
-    "icons": {
+    "photos": {
      "item": [
-      "park",
-      "sun-shirt",
-      "hide"
+      "kids-park",
+      "summer-clothes",
+      "hide-body"
      ]
     }
    }
@@ -551,13 +563,13 @@
    "start": 40.73,
    "end": 46.75,
    "words": "التعب الأولاني مؤقت وبصير أسهل مع الوقت. بس الثاني بضل ملاحقك سنين",
-   "mode": "B+C",
+   "mode": "B",
    "purpose": "Comparison card: first fatigue (temporary) vs. second (chases you for years).",
    "presenter": {
-    "visible": true,
-    "rect": "pip"
+    "visible": false,
+    "rect": "hidden"
    },
-   "framing": "PiP as SC06",
+   "framing": "Card replaces the presenter frame (same rect 964x1440); presenter hidden, voice continues.",
    "texts": [
     {
      "text": "التعب الأولاني",
@@ -611,9 +623,9 @@
     }
    ],
    "asset": {
-    "type": "svg-generated",
-    "source": "assets/svg/clock.svg (col A) + calendar-years.svg (col B)",
-    "status": "to generate"
+    "type": "photo",
+    "source": "assets/photos/stopwatch.jpg (col A) + calendar-years.jpg (col B)",
+    "status": "MISSING — placeholders"
    },
    "transition_in": "card replaces previous card (slide 0.4 s) on source jump cut",
    "transition_out": "card slides down; presenter PiP→full 46.75–47.25",
@@ -622,11 +634,11 @@
    "safe_area": "ok",
    "review_notes": "'ملاحقك' spelling approved by user.",
    "card": {
-    "template": "compare2",
+    "template": "photo-compare2",
     "exit": "down",
-    "icons": {
-     "colA": "clock",
-     "colB": "calendar"
+    "photos": {
+     "a": "stopwatch",
+     "b": "calendar-years"
     }
    }
   },
@@ -651,7 +663,8 @@
      "font": "kinetic 140/800",
      "color": "#10B981",
      "anim": "punch + underline draw",
-     "slot": "kinetic"
+     "slot": "kinetic",
+     "lead": ""
     },
     {
      "text": "أي صعب",
@@ -661,7 +674,8 @@
      "font": "kinetic 140/800",
      "color": "#06B6D4",
      "anim": "punch",
-     "slot": "kinetic"
+     "slot": "kinetic",
+     "lead": "وانت بتختاري"
     }
    ],
    "asset": {
@@ -695,7 +709,8 @@
      "font": "kinetic 120/800",
      "color": "#FFFFFF",
      "anim": "fade-up",
-     "slot": "kinetic"
+     "slot": "kinetic",
+     "lead": "بدك إياه عشان"
     }
    ],
    "asset": {
@@ -717,19 +732,20 @@
    "purpose": "CTA that exists in the audio: comment keyword → free video. Presenter full; CTA elements in the kinetic zone.",
    "presenter": {
     "visible": true,
-    "rect": "full"
+    "rect": "fullbleed"
    },
-   "framing": "same as SC01",
+   "framing": "Full-bleed original footage, no frame (as in the reference finale). CTA text in the top zone y 120–480, clear of the face (face starts ≈y 230 in full-bleed? checked visually) → placed above/beside.",
    "texts": [
     {
      "text": "يوتيوب",
      "t0": 53.2,
      "t1": 59.99,
-     "pos": "comment-bubble badge, kinetic-zone top (y 1560)",
-     "font": "badge 56/800",
-     "color": "#1A1A1A on #F59E0B",
-     "anim": "pop + gentle float",
-     "slot": "cta-badge"
+     "pos": "top zone, centred",
+     "font": "kinetic 150/800",
+     "color": "#10B981",
+     "anim": "punch + glow",
+     "slot": "cta-top",
+     "lead": "بكلمة"
     },
     {
      "text": "فيديو مجاني",
@@ -747,7 +763,7 @@
      "t1": 58.4,
      "pos": "kinetic-zone lower",
      "font": "kinetic 120/800",
-     "color": "#FFFFFF",
+     "color": "#F59E0B",
      "anim": "slide-right",
      "slot": "kinetic-low"
     },
@@ -763,9 +779,7 @@
     }
    ],
    "asset": {
-    "type": "svg-generated",
-    "source": "assets/svg/comment.svg bubble behind the يوتيوب badge (no platform logo)",
-    "status": "to generate"
+    "type": "none"
    },
    "transition_in": "hard cut (source jump cut)",
    "transition_out": "badge stays to the end",
@@ -773,16 +787,7 @@
    "audio_overlap": "continuous",
    "safe_area": "CTA elements y 1560–1890",
    "review_notes": "No platform logo is used; the bubble icon + the spoken word only. No claims beyond the audio.",
-   "icons": [
-    {
-     "svg": "comment",
-     "t0": 53.2,
-     "t1": 59.99,
-     "slot": "cta-icon",
-     "size": 120,
-     "color": "#F59E0B"
-    }
-   ]
+   "icons": []
   },
   {
    "id": "SC15",
@@ -793,7 +798,7 @@
    "purpose": "Outro on the presenter's gesture; fade to dark on the last frames.",
    "presenter": {
     "visible": true,
-    "rect": "full"
+    "rect": "fullbleed"
    },
    "framing": "same as SC01",
    "texts": [],

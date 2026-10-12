@@ -40,7 +40,7 @@ async function worker(w) {
   const file = path.join(tmp, `part${w}.mp4`);
   const page = await browser.newPage({ viewport: { width: W, height: H } });
   page.on('pageerror', (e) => errors.push(e.message));
-  page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
+  page.on('console', (m) => { if (m.type() === 'error' && !/404/.test(m.text())) errors.push(m.text()); });
   await page.goto(url);
   await page.evaluate(() => window.videoReady);
   const ff = spawn('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'image2pipe', '-framerate', String(fps), '-c:v', 'mjpeg', '-i', '-',

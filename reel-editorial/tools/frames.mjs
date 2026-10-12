@@ -26,7 +26,7 @@ const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1080, height: 1920 } });
 const errors = [];
 page.on('pageerror', (e) => errors.push(e.message));
-page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
+page.on('console', (m) => { if (m.type() === 'error' && !/404/.test(m.text())) errors.push(m.text()); });
 await page.goto(`http://127.0.0.1:${port}/engine/index.html?project=${project}&render=1`);
 await page.evaluate(() => window.videoReady);
 let n = 0;
