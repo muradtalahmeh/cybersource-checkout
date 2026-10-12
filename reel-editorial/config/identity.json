@@ -1,0 +1,49 @@
+{
+  "name": "Dark Tech Neo-Editorial",
+  "canvas": { "width": 1080, "height": 1920, "fps": 30 },
+  "colors": {
+    "cyan": "#06B6D4",
+    "teal": "#2DD4BF",
+    "dark": "#10252A",
+    "white": "#FFFFFF",
+    "neon": "#10B981",
+    "neon2": "#22C55E",
+    "cream": "#F7EBE8",
+    "cream2": "#FCEEE9",
+    "ink": "#1A1A1A",
+    "burgundy": "#800020",
+    "gold": "#F59E0B"
+  },
+  "fonts": {
+    "arabic": "Cairo",
+    "fallback": "'DejaVu Sans', sans-serif",
+    "kinetic": { "size": 132, "weight": 800, "lineHeight": 1.15 },
+    "kineticSmall": { "size": 96, "weight": 800 },
+    "cardTitle": { "size": 84, "weight": 800 },
+    "cardText": { "size": 52, "weight": 700 },
+    "badge": { "size": 40, "weight": 800 }
+  },
+  "layout": {
+    "safeMargin": 54,
+    "presenterFull": { "x": 58, "y": 96, "w": 964, "h": 1440, "radius": 44, "cropTop": 0.052 },
+    "presenterPip": { "x": 690, "y": 1380, "w": 336, "h": 448, "radius": 36, "cropTop": 0.04, "cropScale": 1.9 },
+    "kineticZone": { "y": 1560, "h": 330 },
+    "card": { "x": 54, "y": 150, "w": 972, "radius": 40 }
+  },
+  "frame": {
+    "borderWidth": 4,
+    "glowBlur": 26,
+    "glowAlpha": 0.55,
+    "shadow": "0 30px 60px rgba(0,0,0,0.6)",
+    "backdropBlur": 30,
+    "backdropBrightness": 0.42,
+    "backdropScale": 1.12
+  },
+  "motion": {
+    "punchIn": 0.22,
+    "fade": 0.18,
+    "cardSlide": 0.42,
+    "pipMorph": 0.5,
+    "easing": "outBack"
+  }
+}

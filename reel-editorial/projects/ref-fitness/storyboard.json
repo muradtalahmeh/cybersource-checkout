@@ -1,0 +1,811 @@
+{
+ "project": "ref-fitness",
+ "transcript": "transcript.json",
+ "duration": 60.443,
+ "fps": 30,
+ "notes": [
+  "Times in seconds, measured from the source audio (sentence spans) and the source's burned-in captions (word times, ±0.25 s).",
+  "Every on-screen word exists in the audio. Numbered badges (1/2/3) count the 'تحديات' the speaker lists; they add no words.",
+  "The source carries burned-in single-word captions at 72–75 % of its height; they remain visible inside the presenter frame. New text sits outside that zone.",
+  "Source jump cuts at 26.71 s, 40.71 s and 52.42 s are used as scene boundaries so no new cut is introduced.",
+  "No SFX assets are available in this environment; every sfx field is a cue for later, not an applied sound. The original audio stream is copied unchanged."
+ ],
+ "scenes": [
+  {
+   "id": "SC01",
+   "start": 0.0,
+   "end": 4.7,
+   "words": "مشوار الرشاقة والعناية بالجسم مشوار طويل وملان تحديات",
+   "mode": "A",
+   "purpose": "Hook: establish the journey framing and the word 'تحديات' that structures the next 15 s.",
+   "presenter": {
+    "visible": true,
+    "rect": "full"
+   },
+   "framing": "Full presenter frame 964x1440 at (58,96); source scaled 1.339x, top 5.2 % cropped (ceiling only), bottom ~10 % cropped (table edge). Face stays at frame y≈110–420.",
+   "texts": [
+    {
+     "text": "مشوار طويل",
+     "t0": 2.3,
+     "t1": 3.3,
+     "pos": "kinetic-zone center",
+     "font": "kinetic 132/800",
+     "color": "#FFFFFF",
+     "anim": "fade-up",
+     "slot": "kinetic"
+    },
+    {
+     "text": "ملان تحديات",
+     "t0": 3.3,
+     "t1": 4.7,
+     "pos": "kinetic-zone center",
+     "font": "kinetic 132/800",
+     "color": "#10B981",
+     "anim": "punch",
+     "slot": "kinetic"
+    }
+   ],
+   "asset": {
+    "type": "none"
+   },
+   "transition_in": "fade from #10252A, 0.35 s",
+   "transition_out": "none (continuous presenter)",
+   "sfx": "soft pop at 3.3 (cue only, no asset)",
+   "audio_overlap": "original speech continuous",
+   "safe_area": "text at y 1560–1890, margin 54; clear of face and of burned-in caption (frame y≈1144–1195).",
+   "review_notes": "Source's own black title box is visible 0–2.5 s inside the frame; accepted."
+  },
+  {
+   "id": "SC02",
+   "start": 4.7,
+   "end": 7.4,
+   "words": "بس ما عمري حكيت لك إنه سهل (+ 'إنك تلاقي حالك' begins at 6.6)",
+   "mode": "A",
+   "purpose": "Negation beat: 'never said it was easy' shown as the phrase being struck through.",
+   "presenter": {
+    "visible": true,
+    "rect": "full"
+   },
+   "framing": "same as SC01",
+   "texts": [
+    {
+     "text": "إنه سهل",
+     "t0": 6.15,
+     "t1": 7.4,
+     "pos": "kinetic-zone center",
+     "font": "kinetic 132/800",
+     "color": "#FFFFFF",
+     "anim": "fade-up + strike-through (burgundy line draws 6.6→6.95)",
+     "slot": "kinetic"
+    }
+   ],
+   "asset": {
+    "type": "none"
+   },
+   "transition_in": "none",
+   "transition_out": "text fades 0.18 s",
+   "sfx": "none",
+   "audio_overlap": "continuous",
+   "safe_area": "ok",
+   "review_notes": "Strike-through conveys the spoken negation 'ما عمري حكيت لك'; no extra words added."
+  },
+  {
+   "id": "SC03",
+   "start": 7.4,
+   "end": 11.9,
+   "words": "إنك تلاقي حالك ميتة تعب وتقاومي حالك عشان تلعبي تمارين بالبيت، صعب",
+   "mode": "D",
+   "purpose": "Challenge 1 (home workouts while exhausted). Badge 1 + two keyword bursts + 'صعب' stamp.",
+   "presenter": {
+    "visible": true,
+    "rect": "full"
+   },
+   "framing": "same as SC01",
+   "texts": [
+    {
+     "text": "1",
+     "t0": 7.4,
+     "t1": 11.9,
+     "pos": "badge top-right of frame (x 900, y 150)",
+     "font": "badge 40/800",
+     "color": "#1A1A1A on #F59E0B",
+     "anim": "pop",
+     "slot": "badge"
+    },
+    {
+     "text": "ميتة تعب",
+     "t0": 7.7,
+     "t1": 9.5,
+     "pos": "kinetic-zone center",
+     "font": "kinetic 132/800",
+     "color": "#FFFFFF",
+     "anim": "punch",
+     "slot": "kinetic"
+    },
+    {
+     "text": "تمارين بالبيت",
+     "t0": 9.7,
+     "t1": 10.9,
+     "pos": "kinetic-zone center",
+     "font": "kinetic 120/800",
+     "color": "#10B981",
+     "anim": "slide-right",
+     "slot": "kinetic"
+    },
+    {
+     "text": "صعب",
+     "t0": 10.9,
+     "t1": 11.9,
+     "pos": "kinetic-zone center",
+     "font": "kinetic 150/800",
+     "color": "#06B6D4",
+     "anim": "punch + glow + echo",
+     "slot": "kinetic"
+    }
+   ],
+   "asset": {
+    "type": "none"
+   },
+   "transition_in": "badge pop 0.25 s",
+   "transition_out": "badge swaps to 2",
+   "sfx": "tactile click at 7.4; soft pop at 10.9 (cues)",
+   "audio_overlap": "continuous",
+   "safe_area": "ok",
+   "review_notes": "Word timing here is from ASR timestamps (captions hidden by hand 6.75–11.25 s): ±0.3 s."
+  },
+  {
+   "id": "SC04",
+   "start": 11.9,
+   "end": 14.0,
+   "words": "وإنك تقاومي قعدة السهرة وتنامي بدري",
+   "mode": "D",
+   "purpose": "Challenge 2 (sleep early instead of late nights).",
+   "presenter": {
+    "visible": true,
+    "rect": "full"
+   },
+   "framing": "same as SC01",
+   "texts": [
+    {
+     "text": "2",
+     "t0": 11.9,
+     "t1": 14.0,
+     "pos": "badge top-right",
+     "font": "badge 40/800",
+     "color": "#1A1A1A on #F59E0B",
+     "anim": "pop",
+     "slot": "badge"
+    },
+    {
+     "text": "قعدة السهرة",
+     "t0": 12.2,
+     "t1": 13.0,
+     "pos": "kinetic-zone center",
+     "font": "kinetic 132/800",
+     "color": "#FFFFFF",
+     "anim": "punch",
+     "slot": "kinetic"
+    },
+    {
+     "text": "تنامي بدري",
+     "t0": 13.0,
+     "t1": 14.0,
+     "pos": "kinetic-zone center",
+     "font": "kinetic 132/800",
+     "color": "#10B981",
+     "anim": "slide-right",
+     "slot": "kinetic"
+    }
+   ],
+   "asset": {
+    "type": "none"
+   },
+   "transition_in": "none",
+   "transition_out": "none",
+   "sfx": "tactile click at 11.9 (cue)",
+   "audio_overlap": "continuous",
+   "safe_area": "ok",
+   "review_notes": ""
+  },
+  {
+   "id": "SC05",
+   "start": 14.0,
+   "end": 15.0,
+   "words": "برضه صعب",
+   "mode": "D",
+   "purpose": "Repeat motif: the 'صعب' stamp returns identically (rhythm).",
+   "presenter": {
+    "visible": true,
+    "rect": "full"
+   },
+   "framing": "same as SC01",
+   "texts": [
+    {
+     "text": "2",
+     "t0": 14.0,
+     "t1": 15.0,
+     "pos": "badge top-right (carried over)",
+     "font": "badge 40/800",
+     "color": "#1A1A1A on #F59E0B",
+     "anim": "",
+     "slot": "badge"
+    },
+    {
+     "text": "صعب",
+     "t0": 14.4,
+     "t1": 15.0,
+     "pos": "kinetic-zone center",
+     "font": "kinetic 150/800",
+     "color": "#06B6D4",
+     "anim": "punch + glow + echo",
+     "slot": "kinetic"
+    }
+   ],
+   "asset": {
+    "type": "none"
+   },
+   "transition_in": "none",
+   "transition_out": "presenter morphs to PiP over 15.0–15.5",
+   "sfx": "soft pop at 14.4 (cue)",
+   "audio_overlap": "continuous",
+   "safe_area": "ok",
+   "review_notes": ""
+  },
+  {
+   "id": "SC06",
+   "start": 15.0,
+   "end": 21.0,
+   "words": "وإنك تختاري الأكل الصحي وتسيبي الأكل الغير صحي نهاية الأسبوع. برضه صعب",
+   "mode": "B+C",
+   "purpose": "Challenge 3 as an editorial comparison card: healthy food vs. unhealthy weekend food; presenter in PiP; 'صعب' stamp lands on the card.",
+   "presenter": {
+    "visible": true,
+    "rect": "pip"
+   },
+   "framing": "PiP 336x448 at (690,1380), source cropped to head/shoulders (crop scale 1.9, top 4 %).",
+   "texts": [
+    {
+     "text": "3",
+     "t0": 15.0,
+     "t1": 21.0,
+     "pos": "badge on card top-left",
+     "font": "badge 40/800",
+     "color": "#1A1A1A on #F59E0B",
+     "anim": "pop",
+     "slot": "badge"
+    },
+    {
+     "text": "الأكل الصحي",
+     "t0": 15.75,
+     "t1": 21.0,
+     "pos": "card tile A (right column) title",
+     "font": "cardTitle 84/800",
+     "color": "#1A1A1A",
+     "anim": "fade-up",
+     "slot": "tileA-title"
+    },
+    {
+     "text": "الأكل الغير صحي",
+     "t0": 17.5,
+     "t1": 21.0,
+     "pos": "card tile B (left column) title",
+     "font": "cardTitle 72/800",
+     "color": "#800020",
+     "anim": "fade-up",
+     "slot": "tileB-title"
+    },
+    {
+     "text": "نهاية الأسبوع",
+     "t0": 18.75,
+     "t1": 21.0,
+     "pos": "card tile B subtitle",
+     "font": "cardText 52/700",
+     "color": "#1A1A1A",
+     "anim": "fade",
+     "slot": "tileB-sub"
+    },
+    {
+     "text": "صعب",
+     "t0": 20.25,
+     "t1": 21.0,
+     "pos": "stamp over card centre, rotated -8°",
+     "font": "kinetic 150/800",
+     "color": "#800020",
+     "anim": "stamp (scale 1.6→1, 0.2 s)",
+     "slot": "stamp"
+    }
+   ],
+   "asset": {
+    "type": "svg-generated",
+    "source": "assets/svg/apple.svg (tile A, teal) + assets/svg/burger.svg (tile B, burgundy)",
+    "status": "to generate programmatically"
+   },
+   "transition_in": "card slides up + fades 0.42 s; presenter morphs full→PiP 0.5 s",
+   "transition_out": "card fades/slides down 0.4 s; presenter morphs PiP→full",
+   "sfx": "paper slide at 15.0; soft pop 20.25 (cues)",
+   "audio_overlap": "speech continuous under card",
+   "safe_area": "card x 54–1026, y 150–1330; PiP bottom-right; nothing over the face in PiP.",
+   "review_notes": "The icons are simple geometric SVGs, not photos. The card has one idea (healthy vs. unhealthy).",
+   "card": {
+    "template": "compare",
+    "exit": "down",
+    "icons": {
+     "tileA": "apple",
+     "tileB": "burger"
+    }
+   }
+  },
+  {
+   "id": "SC07",
+   "start": 21.0,
+   "end": 23.98,
+   "words": "بس تعالي أقول لك اللي أصعب من هذا بكثير",
+   "mode": "A",
+   "purpose": "Pivot to the real cost: presenter back full-frame, one strong keyword.",
+   "presenter": {
+    "visible": true,
+    "rect": "full"
+   },
+   "framing": "same as SC01",
+   "texts": [
+    {
+     "text": "أصعب بكثير",
+     "t0": 22.3,
+     "t1": 23.98,
+     "pos": "kinetic-zone center",
+     "font": "kinetic 140/800",
+     "color": "#10B981",
+     "anim": "punch + glow + tracking-in",
+     "slot": "kinetic"
+    }
+   ],
+   "asset": {
+    "type": "none"
+   },
+   "transition_in": "presenter morph PiP→full 21.0–21.5",
+   "transition_out": "hard cut at 23.98 (text out)",
+   "sfx": "subtle whoosh at 21.0 (cue)",
+   "audio_overlap": "continuous",
+   "safe_area": "ok",
+   "review_notes": ""
+  },
+  {
+   "id": "SC08",
+   "start": 23.98,
+   "end": 26.73,
+   "words": "إنه ينقطع نفسك من أقل طلعة درج",
+   "mode": "D",
+   "purpose": "First consequence with a small illustration (stairs).",
+   "presenter": {
+    "visible": true,
+    "rect": "full"
+   },
+   "framing": "same as SC01",
+   "texts": [
+    {
+     "text": "ينقطع نفسك",
+     "t0": 24.4,
+     "t1": 25.6,
+     "pos": "kinetic-zone center",
+     "font": "kinetic 132/800",
+     "color": "#FFFFFF",
+     "anim": "punch",
+     "slot": "kinetic"
+    },
+    {
+     "text": "طلعة درج",
+     "t0": 25.9,
+     "t1": 26.73,
+     "pos": "kinetic-zone, right of stairs icon",
+     "font": "kinetic 132/800",
+     "color": "#06B6D4",
+     "anim": "slide-right",
+     "slot": "kinetic"
+    }
+   ],
+   "asset": {
+    "type": "svg-generated",
+    "source": "assets/svg/stairs.svg, 160 px, cyan stroke, appears 25.9",
+    "status": "to generate"
+   },
+   "transition_in": "none",
+   "transition_out": "hard cut on the source's own jump cut at 26.71",
+   "sfx": "none",
+   "audio_overlap": "continuous",
+   "safe_area": "ok",
+   "review_notes": "",
+   "icons": [
+    {
+     "svg": "stairs",
+     "t0": 25.9,
+     "t1": 26.73,
+     "slot": "kinetic-icon",
+     "size": 170,
+     "color": "#06B6D4"
+    }
+   ]
+  },
+  {
+   "id": "SC09",
+   "start": 26.73,
+   "end": 31.0,
+   "words": "إنك تختفي من الصور وتتجنبيها لأنك ما بتحبي الصور",
+   "mode": "A",
+   "purpose": "Second consequence (photos). Presenter is expressive here; keep him full.",
+   "presenter": {
+    "visible": true,
+    "rect": "full"
+   },
+   "framing": "same as SC01",
+   "texts": [
+    {
+     "text": "تختفي من الصور",
+     "t0": 27.0,
+     "t1": 28.7,
+     "pos": "kinetic-zone center",
+     "font": "kinetic 120/800",
+     "color": "#FFFFFF",
+     "anim": "slide-right",
+     "slot": "kinetic"
+    },
+    {
+     "text": "ما بتحبي الصور",
+     "t0": 29.7,
+     "t1": 31.0,
+     "pos": "kinetic-zone center",
+     "font": "kinetic 120/800",
+     "color": "#06B6D4",
+     "anim": "fade-up",
+     "slot": "kinetic"
+    }
+   ],
+   "asset": {
+    "type": "none"
+   },
+   "transition_in": "hard cut (source jump cut)",
+   "transition_out": "presenter morphs to PiP 31.0–31.5",
+   "sfx": "none",
+   "audio_overlap": "continuous",
+   "safe_area": "ok",
+   "review_notes": "'وتتجنبيها' timing from ASR (caption hidden)."
+  },
+  {
+   "id": "SC10",
+   "start": 31.0,
+   "end": 40.73,
+   "words": "وإنه تنحرمي لعب أولادك بالحديقة لأنك مش قادرة تلحقي وراهم. وإنه يجي الصيف وتضلك تشيلي هم اللبس وتدوري على أشياء تخبي جسمك",
+   "mode": "B+C",
+   "purpose": "Editorial list card 'الأصعب': three consequences appear as they are spoken; presenter in PiP.",
+   "presenter": {
+    "visible": true,
+    "rect": "pip"
+   },
+   "framing": "PiP as SC06",
+   "texts": [
+    {
+     "text": "أصعب بكثير",
+     "t0": 31.0,
+     "t1": 40.73,
+     "pos": "card title (top, right-aligned)",
+     "font": "cardTitle 84/800",
+     "color": "#800020",
+     "anim": "fade-up",
+     "slot": "card-title"
+    },
+    {
+     "text": "لعب أولادك بالحديقة",
+     "t0": 31.75,
+     "t1": 40.73,
+     "pos": "card item 1",
+     "font": "cardText 56/700",
+     "color": "#1A1A1A",
+     "anim": "slide-in from right + check mark",
+     "slot": "item"
+    },
+    {
+     "text": "الصيف واللبس",
+     "t0": 36.25,
+     "t1": 40.73,
+     "pos": "card item 2",
+     "font": "cardText 56/700",
+     "color": "#1A1A1A",
+     "anim": "slide-in from right",
+     "slot": "item"
+    },
+    {
+     "text": "تخبي جسمك",
+     "t0": 39.75,
+     "t1": 40.73,
+     "pos": "card item 3",
+     "font": "cardText 56/700",
+     "color": "#1A1A1A",
+     "anim": "slide-in from right",
+     "slot": "item"
+    }
+   ],
+   "asset": {
+    "type": "svg-generated",
+    "source": "assets/svg/park.svg, sun-shirt.svg, hide.svg — 96 px item icons, teal stroke",
+    "status": "to generate"
+   },
+   "transition_in": "card slides up 0.42 s; presenter full→PiP",
+   "transition_out": "card slides left and is replaced by SC11 card (0.4 s) on the source jump cut 40.71",
+   "sfx": "paper slide 31.0; tactile click per item (cues)",
+   "audio_overlap": "continuous",
+   "safe_area": "card y 150–1330, PiP bottom-right",
+   "review_notes": "Card title 'أصعب بكثير' is the speaker's exact phrase (22.25 s). Items are compressed to words he says.",
+   "card": {
+    "template": "list",
+    "exit": "left",
+    "icons": {
+     "item": [
+      "park",
+      "sun-shirt",
+      "hide"
+     ]
+    }
+   }
+  },
+  {
+   "id": "SC11",
+   "start": 40.73,
+   "end": 46.75,
+   "words": "التعب الأولاني مؤقت وبصير أسهل مع الوقت. بس الثاني بضل ملاحقك سنين",
+   "mode": "B+C",
+   "purpose": "Comparison card: first fatigue (temporary) vs. second (chases you for years).",
+   "presenter": {
+    "visible": true,
+    "rect": "pip"
+   },
+   "framing": "PiP as SC06",
+   "texts": [
+    {
+     "text": "التعب الأولاني",
+     "t0": 40.75,
+     "t1": 46.75,
+     "pos": "card column A title (right)",
+     "font": "cardTitle 72/800",
+     "color": "#1A1A1A",
+     "anim": "fade-up",
+     "slot": "colA-title"
+    },
+    {
+     "text": "مؤقت",
+     "t0": 42.0,
+     "t1": 46.75,
+     "pos": "card column A value",
+     "font": "kinetic 120/800",
+     "color": "#2DD4BF",
+     "anim": "punch",
+     "slot": "colA-value"
+    },
+    {
+     "text": "أسهل مع الوقت",
+     "t0": 43.25,
+     "t1": 46.75,
+     "pos": "card column A note",
+     "font": "cardText 48/700",
+     "color": "#1A1A1A",
+     "anim": "fade",
+     "slot": "colA-note"
+    },
+    {
+     "text": "الثاني",
+     "t0": 45.0,
+     "t1": 46.75,
+     "pos": "card column B title (left)",
+     "font": "cardTitle 72/800",
+     "color": "#1A1A1A",
+     "anim": "fade-up",
+     "slot": "colB-title"
+    },
+    {
+     "text": "ملاحقك سنين",
+     "t0": 45.6,
+     "t1": 46.75,
+     "pos": "card column B value",
+     "font": "kinetic 110/800",
+     "color": "#800020",
+     "anim": "punch",
+     "slot": "colB-value"
+    }
+   ],
+   "asset": {
+    "type": "svg-generated",
+    "source": "assets/svg/clock.svg (col A) + calendar-years.svg (col B)",
+    "status": "to generate"
+   },
+   "transition_in": "card replaces previous card (slide 0.4 s) on source jump cut",
+   "transition_out": "card slides down; presenter PiP→full 46.75–47.25",
+   "sfx": "paper slide 40.73 (cue)",
+   "audio_overlap": "continuous",
+   "safe_area": "ok",
+   "review_notes": "'ملاحقك' spelling approved by user.",
+   "card": {
+    "template": "compare2",
+    "exit": "down",
+    "icons": {
+     "colA": "clock",
+     "colB": "calendar"
+    }
+   }
+  },
+  {
+   "id": "SC12",
+   "start": 46.75,
+   "end": 50.08,
+   "words": "اختاري صح، وانت بتختاري أي صعب",
+   "mode": "A",
+   "purpose": "The decision line; presenter full, two keyword bursts.",
+   "presenter": {
+    "visible": true,
+    "rect": "full"
+   },
+   "framing": "same as SC01",
+   "texts": [
+    {
+     "text": "اختاري صح",
+     "t0": 46.8,
+     "t1": 48.6,
+     "pos": "kinetic-zone center",
+     "font": "kinetic 140/800",
+     "color": "#10B981",
+     "anim": "punch + underline draw",
+     "slot": "kinetic"
+    },
+    {
+     "text": "أي صعب",
+     "t0": 49.2,
+     "t1": 50.08,
+     "pos": "kinetic-zone center",
+     "font": "kinetic 140/800",
+     "color": "#06B6D4",
+     "anim": "punch",
+     "slot": "kinetic"
+    }
+   ],
+   "asset": {
+    "type": "none"
+   },
+   "transition_in": "presenter morph PiP→full",
+   "transition_out": "none",
+   "sfx": "soft chime at 46.8 (cue)",
+   "audio_overlap": "continuous",
+   "safe_area": "ok",
+   "review_notes": ""
+  },
+  {
+   "id": "SC13",
+   "start": 50.08,
+   "end": 52.42,
+   "words": "بدك إياه عشان تعيشي معه",
+   "mode": "A",
+   "purpose": "Quiet beat before the CTA.",
+   "presenter": {
+    "visible": true,
+    "rect": "full"
+   },
+   "framing": "same as SC01",
+   "texts": [
+    {
+     "text": "تعيشي معه",
+     "t0": 51.2,
+     "t1": 52.42,
+     "pos": "kinetic-zone center",
+     "font": "kinetic 120/800",
+     "color": "#FFFFFF",
+     "anim": "fade-up",
+     "slot": "kinetic"
+    }
+   ],
+   "asset": {
+    "type": "none"
+   },
+   "transition_in": "none",
+   "transition_out": "hard cut on source jump cut 52.42",
+   "sfx": "none",
+   "audio_overlap": "continuous",
+   "safe_area": "ok",
+   "review_notes": "ASR weak here; wording from the burned-in captions (approved)."
+  },
+  {
+   "id": "SC14",
+   "start": 52.42,
+   "end": 59.99,
+   "words": "بكلمة «يوتيوب» رح يوصلك فيديو مجاني بيشرح لك كيف تلعب رياضة من بيتك حتى لو انت مشغولة 24 ساعة",
+   "mode": "E",
+   "purpose": "CTA that exists in the audio: comment keyword → free video. Presenter full; CTA elements in the kinetic zone.",
+   "presenter": {
+    "visible": true,
+    "rect": "full"
+   },
+   "framing": "same as SC01",
+   "texts": [
+    {
+     "text": "يوتيوب",
+     "t0": 53.2,
+     "t1": 59.99,
+     "pos": "comment-bubble badge, kinetic-zone top (y 1560)",
+     "font": "badge 56/800",
+     "color": "#1A1A1A on #F59E0B",
+     "anim": "pop + gentle float",
+     "slot": "cta-badge"
+    },
+    {
+     "text": "فيديو مجاني",
+     "t0": 54.2,
+     "t1": 56.4,
+     "pos": "kinetic-zone lower (y 1700)",
+     "font": "kinetic 120/800",
+     "color": "#10B981",
+     "anim": "punch + glow",
+     "slot": "kinetic-low"
+    },
+    {
+     "text": "من بيتك",
+     "t0": 56.5,
+     "t1": 58.4,
+     "pos": "kinetic-zone lower",
+     "font": "kinetic 120/800",
+     "color": "#FFFFFF",
+     "anim": "slide-right",
+     "slot": "kinetic-low"
+    },
+    {
+     "text": "24 ساعة",
+     "t0": 58.45,
+     "t1": 59.99,
+     "pos": "kinetic-zone lower",
+     "font": "kinetic 140/800",
+     "color": "#06B6D4",
+     "anim": "punch + glow",
+     "slot": "kinetic-low"
+    }
+   ],
+   "asset": {
+    "type": "svg-generated",
+    "source": "assets/svg/comment.svg bubble behind the يوتيوب badge (no platform logo)",
+    "status": "to generate"
+   },
+   "transition_in": "hard cut (source jump cut)",
+   "transition_out": "badge stays to the end",
+   "sfx": "gentle riser 52.42; soft chime 58.45 (cues)",
+   "audio_overlap": "continuous",
+   "safe_area": "CTA elements y 1560–1890",
+   "review_notes": "No platform logo is used; the bubble icon + the spoken word only. No claims beyond the audio.",
+   "icons": [
+    {
+     "svg": "comment",
+     "t0": 53.2,
+     "t1": 59.99,
+     "slot": "cta-icon",
+     "size": 120,
+     "color": "#F59E0B"
+    }
+   ]
+  },
+  {
+   "id": "SC15",
+   "start": 59.99,
+   "end": 60.443,
+   "words": "(no speech — breath/laugh; thumbs-up + wink)",
+   "mode": "A",
+   "purpose": "Outro on the presenter's gesture; fade to dark on the last frames.",
+   "presenter": {
+    "visible": true,
+    "rect": "full"
+   },
+   "framing": "same as SC01",
+   "texts": [],
+   "asset": {
+    "type": "none"
+   },
+   "transition_in": "none",
+   "transition_out": "fade to #10252A over the final 0.3 s",
+   "sfx": "none",
+   "audio_overlap": "audio tail kept (no speech)",
+   "safe_area": "ok",
+   "review_notes": "No CTA added beyond what the audio says."
+  }
+ ]
+}
