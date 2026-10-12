@@ -48,7 +48,15 @@
   }
 
   // Frame-exact entry point for the exporter.
-  window.renderAt = async (t) => { await ready; draw(t); return true; };
+  // In render mode every frame is repainted in full: Chromium otherwise
+  // re-rasterizes only damaged regions, which can shift anti-aliasing by a
+  // few levels depending on the frame order (seen in the determinism test).
+  window.renderAt = async (t) => {
+    await ready;
+    draw(t);
+    if (renderMode) { svg.style.display = 'none'; svg.getBoundingClientRect(); svg.style.display = ''; }
+    return true;
+  };
   window.videoReady = ready;
   if (renderMode) return;
 

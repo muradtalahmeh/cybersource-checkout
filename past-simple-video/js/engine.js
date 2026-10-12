@@ -356,7 +356,11 @@
         if (s.onP) s.onP(p);
         if (s.hidden) continue;
         if (p <= 0) { s.el.style.visibility = 'hidden'; s.el.style.strokeDasharray = `${s.len + 1} ${s.len + 1}`; }
-        else if (p >= 1) { s.el.style.visibility = ''; s.el.style.strokeDasharray = 'none'; }
+        else if (p >= 1) {
+          // fully drawn: drop dash state entirely so the finished line is
+          // rasterized exactly the same whatever path led to this frame
+          s.el.style.visibility = ''; s.el.style.removeProperty('stroke-dasharray'); s.el.style.removeProperty('stroke-dashoffset');
+        }
         else {
           s.el.style.visibility = '';
           s.el.style.strokeDasharray = `${s.len + 1} ${s.len + 1}`;
