@@ -1,2 +1,4 @@
 output/.parts-*/
 node_modules/
+# full-quality masters can exceed GitHub's 100 MB limit; regenerate with tools/render.mjs
+output/video-*.mp4
