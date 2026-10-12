@@ -72,6 +72,6 @@ const partial = from > 0 || to < audioDur;
 const aArgs = partial ? ['-ss', String(f0 / fps), '-t', String((f1 - f0) / fps)] : [];
 // Full renders copy the original AAC stream untouched; partial renders must trim, which re-encodes.
 execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', video, ...aArgs, '-i', audio, '-map', '0:v:0', '-map', '1:a:0',
-  '-c:v', 'copy', ...(partial ? ['-c:a', 'aac', '-b:a', '160k'] : ['-c:a', 'copy']), '-movflags', '+faststart', '-shortest', out]);
+  '-c:v', 'copy', ...(partial ? ['-c:a', 'aac', '-b:a', '160k'] : ['-c:a', 'copy']), '-movflags', '+faststart', out]);
 fs.rmSync(tmp, { recursive: true, force: true });
 console.log(`wrote ${out} in ${((Date.now() - started) / 1000).toFixed(0)} s (${partial ? 'audio trimmed + re-encoded' : 'original audio stream copied'})`);
