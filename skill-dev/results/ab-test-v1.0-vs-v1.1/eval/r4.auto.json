@@ -1,0 +1,196 @@
+{
+ "run": "r4",
+ "files": {
+  "js/transcript.js": true,
+  "js/storyboard.js": true,
+  "docs/STORYBOARD.md": true,
+  "js/scenes.js": true
+ },
+ "structure": {
+  "audio_duration": 57,
+  "scenes": 4,
+  "scene_durations": [
+   18.4,
+   15.15,
+   13.4,
+   10.05
+  ],
+  "transcript_segments": 20,
+  "problems": [],
+  "fields_missing": []
+ },
+ "english_examples": [
+  {
+   "reference": "They weren't happy.",
+   "found_exact": true,
+   "start_diff_s": 0.4,
+   "flagged": true
+  },
+  {
+   "reference": "Were you tired yesterday?",
+   "found_exact": true,
+   "start_diff_s": 0.0,
+   "flagged": false
+  },
+  {
+   "reference": "I played football.",
+   "found_exact": true,
+   "start_diff_s": 0.86,
+   "flagged": false
+  },
+  {
+   "reference": "I didn't play football.",
+   "found_exact": true,
+   "start_diff_s": 0.0,
+   "flagged": true
+  },
+  {
+   "reference": "Did you play football?",
+   "found_exact": false,
+   "start_diff_s": null,
+   "flagged": null
+  }
+ ],
+ "wrong_forms_in_transcript": {
+  "watched_after_didnt": false,
+  "went_after_didnt": false
+ },
+ "transcript_flags": [
+  "The recording starts mid-lesson: this answer belongs to an example whose question is not in the clip. First word scored best as \"Oh\" (alternative \"No\").",
+  "\"على الفاعل\" (before the subject) vs \"على الفعل\" (before the verb) score almost equally in ASR; \"الفاعل\" chosen because it is the correct rule and matches 40.2 s. Please confirm.",
+  "Arabic pass looped (garbage); English re-decode gives \"I didn't play football.\" (scored far above \"didn't played\"). Narration presents it as correct.",
+  "Phrase 51.00–51.53 (\"ed\") was decoded as unrelated words at phrase level; the whole-sentence decode gives \"E-D أو D\". Inferred: ed.",
+  "The audio ends mid-speech at 57.00 s (still speaking in the last 100 ms). ASR hears the last word as \"شكراً\" (best score) — \"شكلها\" (their form) scores close and fits the meaning better. Last word left unwritten on screen; please confirm, or send the rest of the recording."
+ ],
+ "onscreen_english": [
+  {
+   "scene": "S01",
+   "text": "THEY WEREN'T HAPPY.",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S01",
+   "text": "WAS / WERE",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S01",
+   "text": "?",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S01",
+   "text": "WERE YOU TIRED YESTERDAY?",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S01",
+   "text": "DID (crossed out)",
+   "words_not_spoken": [
+    "crossed",
+    "out"
+   ],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S01",
+   "text": "DID (✓)",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S02",
+   "text": "PAST",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S02",
+   "text": "PAST SIMPLE",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S02",
+   "text": "+",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S02",
+   "text": "I PLAYED FOOTBALL. (ED in green)",
+   "words_not_spoken": [
+    "in",
+    "green"
+   ],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S03",
+   "text": "−",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S03",
+   "text": "DIDN'T",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S03",
+   "text": "I DIDN'T PLAY FOOTBALL.",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S03",
+   "text": "?",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S03",
+   "text": "DID",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S04",
+   "text": "PLAY → PLAYED (ED in green)",
+   "words_not_spoken": [
+    "in",
+    "green"
+   ],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S04",
+   "text": "+ED / +D",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  }
+ ],
+ "onscreen_arabic_count": 14
+}

@@ -1,0 +1,196 @@
+{
+ "run": "r1",
+ "files": {
+  "js/transcript.js": true,
+  "js/storyboard.js": true,
+  "docs/STORYBOARD.md": true,
+  "js/scenes.js": true
+ },
+ "structure": {
+  "audio_duration": 57,
+  "scenes": 4,
+  "scene_durations": [
+   18.41,
+   15.14,
+   13.42,
+   10.03
+  ],
+  "transcript_segments": 16,
+  "problems": [],
+  "fields_missing": []
+ },
+ "english_examples": [
+  {
+   "reference": "They weren't happy.",
+   "found_exact": true,
+   "start_diff_s": 0.4,
+   "flagged": true
+  },
+  {
+   "reference": "Were you tired yesterday?",
+   "found_exact": true,
+   "start_diff_s": 1.13,
+   "flagged": false
+  },
+  {
+   "reference": "I played football.",
+   "found_exact": true,
+   "start_diff_s": 0.0,
+   "flagged": false
+  },
+  {
+   "reference": "I didn't play football.",
+   "found_exact": true,
+   "start_diff_s": 0.0,
+   "flagged": true
+  },
+  {
+   "reference": "Did you play football?",
+   "found_exact": true,
+   "start_diff_s": 0.0,
+   "flagged": false
+  }
+ ],
+ "wrong_forms_in_transcript": {
+  "watched_after_didnt": false,
+  "went_after_didnt": false
+ },
+ "transcript_flags": [
+  "Opening 0.3 s word is unclear: English 'Oh,' or Arabic 'أو' (or). The clip appears to start mid-lesson, right after an earlier example.",
+  "'الفاعل' (subject) inferred from the grammar; ASR heard 'الفعل' (verb) and the two score almost equally.",
+  "'مع' (with) vs 'ما' at 11.96 s: chose 'مع' from context and the sentence-level decode.",
+  "Arabic decode looped (garbage, not marked LOOP by the tool); English re-decode is clear and scores far above alternatives.",
+  "'الفاعل' (subject) after Did: sentence decode heard 'الفاعل', phrase decode 'الفعل'; near-equal scores, chosen from the grammar.",
+  "'وتذكّر' (and remember) from context and the English gloss; acoustically 'ويذكر' scored slightly higher.",
+  "Endings heard as 'E-D / D'; 'ed أو d' is the best-scoring candidate.",
+  "Recording ends mid-word at 57.00 s (speech still at -18 dB in the last 0.2 s). ASR wrote 'شكراً', a typical Whisper end-of-audio hallucination; most likely 'شكلها' (their form) cut off. Unverified."
+ ],
+ "onscreen_english": [
+  {
+   "scene": "S01",
+   "text": "They weren't happy.",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S01",
+   "text": "Was / Were + subject …?",
+   "words_not_spoken": [
+    "subject"
+   ],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S01",
+   "text": "Were you tired yesterday?",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S01",
+   "text": "did ✗",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S02",
+   "text": "Past simple",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S02",
+   "text": "PAST · NOW",
+   "words_not_spoken": [
+    "now"
+   ],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S02",
+   "text": "+",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S02",
+   "text": "I played football.",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S03",
+   "text": "didn't + verb",
+   "words_not_spoken": [
+    "verb"
+   ],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S03",
+   "text": "I didn't play football.",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S03",
+   "text": "Did + subject + verb …?",
+   "words_not_spoken": [
+    "subject",
+    "verb"
+   ],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S03",
+   "text": "Did you play football?",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S04",
+   "text": "Regular",
+   "words_not_spoken": [
+    "regular"
+   ],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S04",
+   "text": "+ed / +d",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S04",
+   "text": "played",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S04",
+   "text": "Irregular",
+   "words_not_spoken": [
+    "irregular"
+   ],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  }
+ ],
+ "onscreen_arabic_count": 1
+}

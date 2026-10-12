@@ -1,0 +1,2 @@
+lesson-clip-A.wav = narration 320.4–377.4 s (cut by mistake; used in round A)
+lesson-clip-B.wav = narration 160.2–217.2 s (verified by cross-correlation; used in round B)

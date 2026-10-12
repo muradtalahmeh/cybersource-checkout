@@ -1,0 +1,311 @@
+{
+ "run": "r2",
+ "files": {
+  "js/transcript.js": true,
+  "js/storyboard.js": true,
+  "docs/STORYBOARD.md": true,
+  "js/scenes.js": true
+ },
+ "structure": {
+  "audio_duration": 57,
+  "scenes": 4,
+  "scene_durations": [
+   18.41,
+   15.14,
+   13.42,
+   10.03
+  ],
+  "transcript_segments": 23,
+  "problems": [],
+  "fields_missing": []
+ },
+ "english_examples": [
+  {
+   "reference": "They weren't happy.",
+   "found_exact": true,
+   "start_diff_s": 1.06,
+   "flagged": false
+  },
+  {
+   "reference": "Were you tired yesterday?",
+   "found_exact": true,
+   "start_diff_s": 0.0,
+   "flagged": false
+  },
+  {
+   "reference": "I played football.",
+   "found_exact": true,
+   "start_diff_s": 0.86,
+   "flagged": false
+  },
+  {
+   "reference": "I didn't play football.",
+   "found_exact": true,
+   "start_diff_s": 0.0,
+   "flagged": false
+  },
+  {
+   "reference": "Did you play football?",
+   "found_exact": true,
+   "start_diff_s": 0.0,
+   "flagged": false
+  }
+ ],
+ "wrong_forms_in_transcript": {
+  "watched_after_didnt": false,
+  "went_after_didnt": false
+ },
+ "transcript_flags": [
+  "The clip starts mid-lesson. First word heard as \"أو\" (or); \"Oh\" scored lower but is possible.",
+  "Last word inferred: \"الفاعل\" (subject). ASR heard \"الفعل\" (verb) and scored it slightly higher; \"before the subject\" is what the example shows. Please confirm what was said.",
+  "First \"الفاعل\" vs \"الفعل\" nearly tied in scoring (−3.29 vs −3.35); \"الفاعل\" fits the rule Did + subject + base verb.",
+  "Recording ends mid-speech at 57.00 s (still voiced in the last 150 ms). Last word uncertain: ASR heard \"شكراً\" (thanks), \"شكلها\" (their form) scored close behind and fits the sentence. Is this the full recording?"
+ ],
+ "onscreen_english": [
+  {
+   "scene": "S01",
+   "text": "THEY WEREN'T HAPPY.",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S01",
+   "text": "WERE",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S01",
+   "text": "SUBJECT",
+   "words_not_spoken": [
+    "subject"
+   ],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S01",
+   "text": "WERE YOU TIRED YESTERDAY?",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S01",
+   "text": "YESTERDAY",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S01",
+   "text": "WAS / WERE",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S01",
+   "text": "DID (red strike + cross mark)",
+   "words_not_spoken": [
+    "red",
+    "strike",
+    "cross",
+    "mark"
+   ],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S01",
+   "text": "OTHER VERBS (drawn arrow) DID",
+   "words_not_spoken": [
+    "other",
+    "verbs",
+    "drawn",
+    "arrow"
+   ],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S02",
+   "text": "QUICK REVIEW",
+   "words_not_spoken": [
+    "quick",
+    "review"
+   ],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S02",
+   "text": "PAST",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S02",
+   "text": "NOW",
+   "words_not_spoken": [
+    "now"
+   ],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S02",
+   "text": "PAST SIMPLE",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S02",
+   "text": "+",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S02",
+   "text": "VERB (drawn arrow) PAST FORM",
+   "words_not_spoken": [
+    "verb",
+    "drawn",
+    "arrow",
+    "form"
+   ],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S02",
+   "text": "I PLAYED FOOTBALL.",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S02",
+   "text": "PLAY (pair arrow) PLAYED, ED green",
+   "words_not_spoken": [
+    "pair",
+    "arrow",
+    "green"
+   ],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S03",
+   "text": "-",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S03",
+   "text": "DIDN'T",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S03",
+   "text": "BASE VERB",
+   "words_not_spoken": [
+    "base",
+    "verb"
+   ],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S03",
+   "text": "I DIDN'T PLAY FOOTBALL.",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S03",
+   "text": "?",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S03",
+   "text": "DID",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S03",
+   "text": "SUBJECT",
+   "words_not_spoken": [
+    "subject"
+   ],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S03",
+   "text": "DID YOU PLAY FOOTBALL?",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S04",
+   "text": "REGULAR",
+   "words_not_spoken": [
+    "regular"
+   ],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S04",
+   "text": "PLAY (pair arrow) PLAYED, ED green",
+   "words_not_spoken": [
+    "pair",
+    "arrow",
+    "green"
+   ],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S04",
+   "text": "+ED / +D",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S04",
+   "text": "SPELLING",
+   "words_not_spoken": [
+    "spelling"
+   ],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S04",
+   "text": "IRREGULAR",
+   "words_not_spoken": [
+    "irregular"
+   ],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  }
+ ],
+ "onscreen_arabic_count": 13
+}
