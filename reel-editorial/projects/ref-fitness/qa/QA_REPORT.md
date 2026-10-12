@@ -1,14 +1,14 @@
 # QA report — ref-fitness
 
-Video: `projects/ref-fitness/output/final.mp4` · generated 2026-10-12T16:44:47.550Z
+Video: `projects/ref-fitness/output/final.mp4` · generated 2026-10-12T16:54:39.228Z
 
 | Check | Result | Detail |
 |---|---|---|
 | resolution | PASS | 1080x1920 (expected 1080x1920) |
 | aspect 9:16 | PASS | 0.5625 |
 | fps | PASS | 30/1 |
-| frame count | FAIL | 1813 frames (expected ceil(60.532×30) = 1816) |
-| duration | PASS | 60.532 s vs original audio 60.532 s |
+| frame count | PASS | 1816 frames (expected ceil(60.532×30) = 1816) |
+| duration | PASS | 60.533 s vs original audio 60.532 s |
 | audio codec/rate/channels | PASS | aac HE-AAC 44100 Hz 2 ch |
 | decodes without errors | PASS | clean |
 | no unintended black frames | PASS | none |
