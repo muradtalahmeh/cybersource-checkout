@@ -1,0 +1,338 @@
+<title>ليش الميزان زاد كيلو؟</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600&family=Reem+Kufi:wght@600&display=swap">
+<style>
+/*FONTS*/
+/* Layout: a drawing desk — the 9:16 paper board on one side, a working panel (scenes · narration · notes) on the other; stacks on phones. */
+:root {
+  --desk: #e9e0cc; --surface: #f8f3e8; --ink: #1d1d1b; --muted: #6b6457;
+  --line: #d4c6a8; --green: #2e6a4a; --green-soft: #dde9df; --red: #b23a2b; --flag: #9a6a12; --flag-soft: #f6e9c9;
+  --ui: 'IBM Plex Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
+  --display: 'Reem Kufi', 'IBM Plex Sans Arabic', Tahoma, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --desk: #191b18; --surface: #232622; --ink: #ebe5d6; --muted: #a59e8e; --line: #3a3e37;
+  --green: #86c09c; --green-soft: #2a3a2f; --red: #e07a6a; --flag: #e3b766; --flag-soft: #3a3222; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --desk: #191b18; --surface: #232622; --ink: #ebe5d6; --muted: #a59e8e; --line: #3a3e37;
+  --green: #86c09c; --green-soft: #2a3a2f; --red: #e07a6a; --flag: #e3b766; --flag-soft: #3a3222; color-scheme: dark }
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body { background: var(--desk); color: var(--ink); font: 15px/1.6 var(--ui); }
+.wrap { max-width: 1240px; margin: 0 auto; padding-block: 20px 28px; padding-inline: 16px; display: grid; gap: 20px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 420px); grid-template-areas: "stage panel"; align-items: start; }
+.stagecol { grid-area: stage; display: grid; gap: 12px; justify-items: center; min-width: 0; direction: ltr; }
+.panel { grid-area: panel; min-width: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px; display: grid; gap: 14px; }
+header h1 { font: 600 clamp(24px, 3vw, 32px)/1.2 var(--display); margin: 0; text-wrap: balance; }
+header p { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.chip { font-size: 12.5px; padding: 2px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); font-variant-numeric: tabular-nums; }
+
+/* stage — the paper itself is a fixed visual world in both themes */
+#stageWrap { width: 100%; height: min(78vh, 860px); display: flex; align-items: center; justify-content: center; }
+#stage { position: relative; background: #f4ecdc; overflow: hidden; border-radius: 6px; box-shadow: 0 1px 0 var(--line), 0 18px 40px -18px rgba(0,0,0,.45); container-type: inline-size; }
+#board { display: block; width: 100%; height: 100%; }
+#caption { position: absolute; left: 6%; right: 6%; bottom: 23%; text-align: center; font: 700 4.4cqw/1.4 Cairo, sans-serif; color: #fff; background: rgba(29,29,27,.8); border-radius: 12px; padding: .35em .7em; pointer-events: none; }
+#stage.safe::after { content: ''; position: absolute; inset: 11.5% 12% 20% 4%; border: 2px dashed rgba(178,58,43,.85); pointer-events: none; }
+#mp4 { display: block; background: #000; border-radius: 6px; max-width: 100%; max-height: min(78vh, 860px); aspect-ratio: 9 / 16; }
+.viewtoggle { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; background: var(--surface); direction: rtl; }
+.viewtoggle button { border: 0; background: transparent; color: var(--muted); font: 600 13.5px var(--ui); padding: 6px 14px; border-radius: 999px; cursor: pointer; }
+.viewtoggle button[aria-pressed="true"] { background: var(--green); color: var(--surface); }
+
+/* transport */
+.transport { display: grid; gap: 10px; }
+.row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+button, select { font: inherit; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 9px; padding: 6px 12px; cursor: pointer; }
+button:focus-visible, select:focus-visible, input:focus-visible, .scene:focus-visible, .seg:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+#play { background: var(--green); border-color: var(--green); color: var(--surface); font-weight: 600; min-width: 110px; }
+#time { margin-inline-start: auto; font-variant-numeric: tabular-nums; direction: ltr; color: var(--muted); }
+#seekWrap { position: relative; padding-top: 12px; direction: ltr; }
+#seek { width: 100%; accent-color: var(--green); margin: 0; }
+#markers { position: absolute; inset: 0 0 auto 0; height: 12px; }
+#markers span { position: absolute; top: 0; width: 3px; height: 11px; background: var(--green); border-radius: 2px; transform: translateX(-1.5px); cursor: pointer; }
+#markers b { position: absolute; top: -1px; font: 600 9px/1 var(--ui); color: var(--muted); transform: translateX(4px); pointer-events: none; }
+label { display: inline-flex; gap: 6px; align-items: center; font-size: 14px; }
+
+/* tabs */
+.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--line); }
+.tabs button { border: 0; border-bottom: 2px solid transparent; border-radius: 0; background: transparent; color: var(--muted); padding: 8px 10px; font-weight: 600; }
+.tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--green); }
+.tabpanel { min-width: 0; }
+
+/* scenes */
+.scenes { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.scene { display: grid; grid-template-columns: 54px minmax(0, 1fr); gap: 12px; align-items: center; padding: 8px; border-radius: 10px; border: 1px solid transparent; cursor: pointer; }
+.scene:hover { border-color: var(--line); }
+.scene.on { background: var(--green-soft); border-color: var(--green); }
+.scene img { width: 54px; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 4px; border: 1px solid var(--line); background: #f4ecdc; display: block; }
+.scene h3 { margin: 0; font-size: 15px; line-height: 1.35; }
+.scene .when { font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; direction: ltr; unicode-bidi: isolate; }
+.scene .what { margin: 2px 0 0; font-size: 13px; color: var(--muted); }
+.sid { font: 600 11px var(--ui); letter-spacing: .06em; color: var(--green); margin-left: 8px; direction: ltr; unicode-bidi: isolate; }
+
+/* narration */
+.segs { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; max-height: 56vh; overflow: auto; }
+.seg { display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 10px; padding: 6px 8px; border-radius: 8px; cursor: pointer; }
+.seg:hover { background: var(--green-soft); }
+.seg.on { background: var(--green-soft); box-shadow: inset 3px 0 0 var(--green); }
+.seg time { font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; direction: ltr; text-align: left; padding-top: 2px; }
+.seg .flag { display: block; margin-top: 3px; font-size: 12.5px; color: var(--flag); background: var(--flag-soft); border-radius: 6px; padding: 2px 8px; width: fit-content; max-width: 100%; }
+
+/* notes */
+.notes { display: grid; gap: 14px; font-size: 14px; }
+.notes h3 { margin: 0 0 4px; font-size: 15px; }
+.notes p, .notes ul { margin: 0; }
+.notes ul { padding-inline-start: 20px; display: grid; gap: 4px; }
+.ok { color: var(--green); font-weight: 600; }
+.warn { color: var(--red); font-weight: 600; }
+.vidnote { color: var(--muted); font-size: 13px; text-align: center; max-width: 34ch; }
+.ltr { direction: ltr; unicode-bidi: isolate; font-variant-numeric: tabular-nums; }
+
+@media (max-width: 900px) {
+  .wrap { grid-template-columns: minmax(0, 1fr); grid-template-areas: "stage" "panel"; }
+  #stageWrap { height: auto; }
+  #mp4 { max-height: 80vh; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+
+<div class="wrap" dir="rtl" lang="ar">
+  <div class="stagecol">
+    <div class="viewtoggle" role="group" aria-label="طريقة العرض">
+      <button id="vLive" aria-pressed="true">رسم حي (SVG)</button>
+      <button id="vMp4" aria-pressed="false">الفيديو المُصدَّر (MP4)</button>
+    </div>
+    <div id="stageWrap">
+      <div id="stage">
+        <svg id="board" xmlns="http://www.w3.org/2000/svg" aria-label="لوحة الرسم"></svg>
+        <div id="caption" dir="rtl" lang="ar" hidden></div>
+      </div>
+      <video id="mp4" controls playsinline preload="none" hidden></video>
+    </div>
+  </div>
+
+  <section class="panel">
+    <header>
+      <h1>ليش الميزان زاد كيلو؟</h1>
+      <p>فيلم وايت بورد مرسوم باليد، متزامن مع التسجيل الصوتي الأصلي كما هو.</p>
+      <div class="meta">
+        <span class="chip ltr">9:16 · 1080×1920</span>
+        <span class="chip ltr">1:12.6</span>
+        <span class="chip">7 مشاهد</span>
+        <span class="chip">27 جملة مُوقَّتة</span>
+      </div>
+    </header>
+
+    <div class="transport" id="transport">
+      <div class="row">
+        <button id="play">▶ تشغيل</button>
+        <button id="restart">⟲ من البداية</button>
+        <span id="time"><span id="cur">0:00.0</span> / <span id="dur">0:00.0</span></span>
+      </div>
+      <div id="seekWrap">
+        <input id="seek" type="range" min="0" max="1" step="0.01" value="0" aria-label="الشريط الزمني">
+        <div id="markers"></div>
+      </div>
+      <div class="row">
+        <label>السرعة
+          <select id="speed">
+            <option value="0.5">0.5×</option><option value="0.75">0.75×</option><option value="1" selected>1×</option>
+            <option value="1.25">1.25×</option><option value="1.5">1.5×</option>
+          </select>
+        </label>
+        <label><input id="caps" type="checkbox"> ترجمة عربية</label>
+        <label><input id="safe" type="checkbox"> منطقة ريلز الآمنة</label>
+      </div>
+    </div>
+
+    <div class="tabs" role="tablist">
+      <button role="tab" id="tScenes" aria-selected="true" aria-controls="pScenes">المشاهد</button>
+      <button role="tab" id="tText" aria-selected="false" aria-controls="pText">النص والتوقيت</button>
+      <button role="tab" id="tNotes" aria-selected="false" aria-controls="pNotes">التصدير والمراجعة</button>
+    </div>
+    <div class="tabpanel" id="pScenes" role="tabpanel"><ol class="scenes" id="scenes"></ol></div>
+    <div class="tabpanel" id="pText" role="tabpanel" hidden><ol class="segs" id="segs"></ol></div>
+    <div class="tabpanel notes" id="pNotes" role="tabpanel" hidden>
+      <div>
+        <h3>التصدير</h3>
+        <p>صفحات Claude Artifact تمنع الصفحة من تنزيل الملفات، لذلك <span class="warn">لا يوجد زر تصدير داخل المتصفح هنا</span>. الفيديو في وضع «MP4» صُدِّر خارج المتصفح بنفس المحرك (Playwright + ffmpeg، إطاراً بإطار من نفس الكود) ثم فُحص؛ نسخة الجودة الكاملة موجودة في المستودع وفي المحادثة.</p>
+      </div>
+      <div>
+        <h3>ما تم التحقق منه</h3>
+        <ul id="verified"></ul>
+      </div>
+      <div>
+        <h3>يحتاج مراجعتك</h3>
+        <ul>
+          <li>الصوت عن اللياقة وزيادة الوزن وليس شرح حديث كما في الطلب؛ تابعتُ بعد موافقتك.</li>
+          <li>صورة المرجع المذكورة لم تُرفق؛ اتُّبع الوصف المكتوب (ورق كريمي، خطوط سوداء، بيج، أخضر داكن).</li>
+          <li>التسجيل يبدو لصانعة محتوى أخرى (دعوة «حاجز»)؛ النشر يحتاج إذنها. لم تُرسم الشخصية الحقيقية.</li>
+          <li>كلمات وأرقام مستنتجة بالتقييم الصوتي (مُعلَّمة في تبويب النص): <span class="ltr">2000</span>، <span class="ltr">9800</span>، «طيب شو اللي زاد؟»، «من الزيادة»، صياغة «عليكِ بكلمة حاجز».</li>
+          <li>اليد متجهة (بدون حركة أصابع)، والنص العربي يُكشف على امتداده ولا يُخطّ حرفاً حرفاً.</li>
+          <li>الصوت داخل MP4 بصيغة AAC (الأصلي HE-AAC، ولم يُعدَّل محتواه).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<audio id="audio" preload="auto"></audio>
+<!--VERIFIED-->
+<script src="js/font.js"></script>
+<script src="js/hand.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/art.js"></script>
+<script src="js/transcript.js"></script>
+<script src="js/storyboard.js"></script>
+<script src="js/scenes.js"></script>
+<script>
+(function () {
+  const W = 1080, H = 1920, DUR = window.AUDIO_DURATION;
+  const $ = (id) => document.getElementById(id);
+  const stage = $('stage'), svg = $('board'), audio = $('audio'), video = $('mp4');
+  const AR = {
+    S01: ['الميزان زاد كيلو', 'الميزان يقول +1 والبنت محتارة، ثم «بدون أي قلق».'],
+    S02: ['كم يكلّف كيلو دهون حقيقي؟', 'كتلة دهون، ثم <span class="ltr">+7000 – 7800</span> سعرة فوق الاحتياج.'],
+    S03: ['في يوم واحد!', 'المعادلة <span class="ltr">2000 + 7000–7800 = 9000–9800</span> وأطباق تتراكم.'],
+    S04: ['هل أكلتي كل هذا؟', 'مسح المعادلة، البنت تفكر، ✗ على «أكيد لا»، ثم ميزان مع ؟'],
+    S05: ['مَيّ مش دهون', 'قطرات ماء على الميزان، شطب الدهون، قلب، والبنت ترتاح.'],
+    S06: ['الرقم يتغيّر كل يوم', 'خط متعرج «طبيعي»، ثم خط ثابت يصطدم بجدار.'],
+    S07: ['علّقي «حاجز»', 'تعليق على الجوال، فيديو يكسر الجدار، ورسالة على الخاص.'],
+  };
+  const FLAG_AR = {
+    18.23: 'مستنتج: «2000» أعلى تقييماً من «3000».',
+    23.41: 'مستنتج: «9800» أعلى تقييماً منطوقةً بالكلمات؛ ويتّسق حسابياً مع <span class="ltr">2000 + 7800</span>.',
+    32.99: 'مستنتج: تكرار في فك الترميز؛ الصياغة الأقرب حسب التقييم.',
+    48.64: 'مقطع قصير غير واضح؛ «من الزيادة» الأعلى تقييماً.',
+    58.07: 'تكرار في فك الترميز؛ النص من الجملة الكاملة مع التقييم.',
+    70.7: 'جملة «وتابعوني في القناة» في التفريغ الأول كانت هلوسة على صمت وحُذفت.',
+  };
+  const fmt = (t) => `${Math.floor(t / 60)}:${(t % 60).toFixed(1).padStart(4, '0')}`;
+
+  function fit() {
+    const wrap = $('stageWrap').getBoundingClientRect();
+    const narrow = innerWidth <= 900;
+    const availH = narrow ? innerHeight * 0.78 : wrap.height;
+    const k = Math.min(wrap.width / W, availH / H);
+    stage.style.width = Math.floor(W * k) + 'px';
+    stage.style.height = Math.floor(H * k) + 'px';
+  }
+  fit(); addEventListener('resize', fit);
+
+  // own files are fetched and handed to the media elements as blob URLs
+  const blobOf = (path, type) => fetch(path).then((r) => { if (!r.ok) throw new Error(path + ' ' + r.status); return r.blob(); })
+    .then((b) => URL.createObjectURL(type ? new Blob([b], { type }) : b));
+  blobOf('audio/narration.wav', 'audio/wav').then((u) => { audio.src = u; }).catch((e) => { $('play').textContent = 'تعذّر تحميل الصوت'; console.error(e); });
+  let mp4Loaded = false;
+
+  let E;
+  const ready = (async () => {
+    await Promise.all([document.fonts.load('700 50px Cairo', 'الميزان'), document.fonts.load('700 50px Cairo', '7800'), document.fonts.ready]);
+    E = new Whiteboard.Engine(svg, W, H);
+    window.buildVideo(E, 'v');
+    E.render(0);
+    return true;
+  })();
+
+  const caption = $('caption');
+  let showCaps = false;
+  function captionAt(t) { const s = window.TRANSCRIPT.find((x) => t >= x.s - 0.05 && t <= x.e + 0.35); return s ? s.ar : ''; }
+  function draw(t) {
+    if (!E) return;
+    E.render(t);
+    caption.hidden = !showCaps;
+    if (showCaps) { const c = captionAt(t); caption.textContent = c; caption.style.visibility = c ? '' : 'hidden'; }
+  }
+
+  // ---- transport
+  $('dur').textContent = fmt(DUR);
+  const playBtn = $('play');
+  playBtn.onclick = () => (audio.paused ? audio.play().catch(() => {}) : audio.pause());
+  audio.onplay = () => (playBtn.textContent = '❚❚ إيقاف مؤقت');
+  audio.onpause = audio.onended = () => (playBtn.textContent = '▶ تشغيل');
+  $('restart').onclick = () => { go(0); audio.play().catch(() => {}); };
+  $('speed').onchange = (e) => { audio.playbackRate = +e.target.value; };
+  $('caps').onchange = (e) => { showCaps = e.target.checked; draw(audio.currentTime); };
+  $('safe').onchange = (e) => stage.classList.toggle('safe', e.target.checked);
+  const seek = $('seek'); seek.max = DUR;
+  let scrubbing = false;
+  seek.oninput = () => { scrubbing = true; go(+seek.value); };
+  seek.onchange = () => { scrubbing = false; };
+  function go(t) { setView('live'); try { audio.currentTime = t; } catch (e) {} draw(t); }
+
+  // ---- scenes (markers + list with end-of-scene thumbnails)
+  const marks = $('markers'), list = $('scenes');
+  window.STORYBOARD.forEach((s) => {
+    const m = document.createElement('span');
+    m.style.left = (s.start / DUR) * 100 + '%';
+    m.title = `${s.id} · ${AR[s.id][0]}`;
+    m.onclick = () => go(s.start);
+    marks.appendChild(m);
+    const li = document.createElement('li');
+    li.className = 'scene'; li.tabIndex = 0; li.dataset.id = s.id;
+    li.innerHTML = `<img src="thumbs/${s.id}.jpg" alt="" loading="lazy" width="54" height="96">
+      <div><h3><span class="sid">${s.id}</span>${AR[s.id][0]}</h3>
+      <span class="when">${fmt(s.start)} – ${fmt(s.end)}</span><p class="what">${AR[s.id][1]}</p></div>`;
+    li.onclick = () => go(s.start + 0.01);
+    li.onkeydown = (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); li.click(); } };
+    list.appendChild(li);
+  });
+
+  // ---- narration
+  const segs = $('segs');
+  window.TRANSCRIPT.forEach((x) => {
+    const li = document.createElement('li');
+    li.className = 'seg'; li.tabIndex = 0; li.dataset.s = x.s;
+    const note = x.flag ? `<span class="flag" title="${x.flag.replace(/"/g, '&quot;')}">⚑ ${FLAG_AR[x.s] || 'كلمة مستنتجة — راجعيها'}</span>` : '';
+    li.innerHTML = `<time>${fmt(x.s)}</time><div>${x.ar}${note}</div>`;
+    li.onclick = () => go(x.s);
+    li.onkeydown = (e) => { if (e.key === 'Enter') li.click(); };
+    segs.appendChild(li);
+  });
+
+  // ---- tabs
+  const tabs = [['tScenes', 'pScenes'], ['tText', 'pText'], ['tNotes', 'pNotes']];
+  tabs.forEach(([t, p]) => { $(t).onclick = () => tabs.forEach(([t2, p2]) => { $(t2).setAttribute('aria-selected', t2 === t); $(p2).hidden = p2 !== p; }); });
+
+  // ---- live drawing vs exported MP4
+  function setView(v) {
+    const live = v === 'live';
+    $('vLive').setAttribute('aria-pressed', live); $('vMp4').setAttribute('aria-pressed', !live);
+    stage.hidden = !live; video.hidden = live; $('transport').style.opacity = live ? '' : '.5';
+    document.querySelectorAll('.vidnote').forEach((n) => { n.hidden = live; });
+    if (live) { if (!video.paused) video.pause(); return; }
+    audio.pause();
+    if (!mp4Loaded) { mp4Loaded = true; blobOf('video/scale-weight-9x16-720p.mp4', 'video/mp4').then((u) => { video.src = u; })
+      .then(() => { video.onerror = () => { if (document.querySelector('.vidnote')) return; $('stageWrap').insertAdjacentHTML('beforeend', '<p class="vidnote">هذا المتصفح لا يشغّل H.264؛ الملف نفسه موجود في المحادثة والمستودع.</p>'); }; }).catch((e) => console.error(e)); }
+  }
+  $('vLive').onclick = () => setView('live');
+  $('vMp4').onclick = () => setView('mp4');
+
+  const ver = window.VERIFIED || [];
+  $('verified').innerHTML = ver.map((x) => `<li>${x}</li>`).join('');
+
+  // ---- clock
+  let lastScene = null, lastSeg = null;
+  function tick() {
+    const t = audio.currentTime || 0;
+    if (!stage.hidden) draw(t);
+    if (!scrubbing) seek.value = t;
+    $('cur').textContent = fmt(t);
+    const sc = window.STORYBOARD.find((s) => t >= s.start && t < s.end) || window.STORYBOARD[window.STORYBOARD.length - 1];
+    if (sc.id !== lastScene) { list.querySelectorAll('.scene').forEach((li) => li.classList.toggle('on', li.dataset.id === sc.id)); lastScene = sc.id; }
+    const sg = window.TRANSCRIPT.filter((x) => t >= x.s - 0.05).pop();
+    const key = sg ? String(sg.s) : null;
+    if (key !== lastSeg) { segs.querySelectorAll('.seg').forEach((li) => li.classList.toggle('on', li.dataset.s === key)); lastSeg = key; }
+    requestAnimationFrame(tick);
+  }
+  ready.then(() => requestAnimationFrame(tick));
+  addEventListener('keydown', (e) => {
+    if (['INPUT', 'SELECT', 'VIDEO'].includes(e.target.tagName) && e.target.type !== 'range') return;
+    if (stage.hidden) return;
+    if (e.code === 'Space') { e.preventDefault(); playBtn.click(); }
+    if (e.code === 'ArrowRight') go(Math.min(DUR, audio.currentTime + 2));
+    if (e.code === 'ArrowLeft') go(Math.max(0, audio.currentTime - 2));
+  });
+})();
+</script>
