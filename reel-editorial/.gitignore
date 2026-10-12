@@ -1,0 +1,9 @@
+# Large/derived media stays out of git; regenerate with the tools.
+projects/*/source/
+projects/*/frames/
+projects/*/output/
+projects/*/audio/*.wav
+projects/*/qa/*.png
+projects/*/qa/*.jpg
+node_modules/
+.parts-*/
