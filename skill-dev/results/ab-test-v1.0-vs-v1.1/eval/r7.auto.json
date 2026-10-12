@@ -1,0 +1,166 @@
+{
+ "run": "r7",
+ "files": {
+  "js/transcript.js": true,
+  "js/storyboard.js": true,
+  "docs/STORYBOARD.md": true,
+  "js/scenes.js": true
+ },
+ "structure": {
+  "audio_duration": 57,
+  "scenes": 5,
+  "scene_durations": [
+   16.62,
+   11.24,
+   9.18,
+   9.3,
+   10.66
+  ],
+  "transcript_segments": 31,
+  "problems": [],
+  "fields_missing": []
+ },
+ "english_examples": [
+  {
+   "reference": "I didn't watch TV yesterday.",
+   "found_exact": true,
+   "start_diff_s": 0.0,
+   "flagged": false
+  },
+  {
+   "reference": "I didn't watched TV.",
+   "found_exact": true,
+   "start_diff_s": 0.0,
+   "flagged": true
+  },
+  {
+   "reference": "I didn't watch TV.",
+   "found_exact": true,
+   "start_diff_s": 0.0,
+   "flagged": false
+  },
+  {
+   "reference": "She didn't go to school.",
+   "found_exact": true,
+   "start_diff_s": 0.01,
+   "flagged": false
+  },
+  {
+   "reference": "She didn't went to school.",
+   "found_exact": true,
+   "start_diff_s": 0.58,
+   "flagged": true
+  }
+ ],
+ "wrong_forms_in_transcript": {
+  "watched_after_didnt": true,
+  "went_after_didnt": true
+ },
+ "transcript_flags": [
+  "\"للنفي\" (to negation) is inferred from context: ASR heard \"لنا فيه\", which means nothing here. Please confirm.",
+  "ASR wrote \"بارح\"; written as Levantine \"مبارح\" (yesterday). Same meaning; confirm the spelling you prefer.",
+  "ASR wrote \"انت بهم نيح\"; read as \"انتبه منيح\" (pay close attention) from context. Please confirm.",
+  "Deliberately wrong example. Whisper autocorrects it to \"I didn't watch TV\"; \"watched\" is inferred: the narrator calls it a mistake (هذا خطأ) and then gives \"I didn't watch TV\" as the correct form, the phrase decode heard \"watch it\" (an extra syllable), and forced scoring puts \"watched\" much closer here (gap 3.0) than on the correct repeats (gaps 7.0–7.9). Please confirm.",
+  "ASR wrote \"غير المنطمئ\"; read as \"غير المنتظمة\" (irregular verbs), which fits go/went and scored best.",
+  "Deliberately wrong example (introduced by \"مش\" = not). Heard directly by ASR and confirmed by scoring; no inference needed.",
+  "Last word, cut off at the end of the recording (ASR: \"هلا\"). Probably the start of the next part (\"now…\"); the recording ends here."
+ ],
+ "onscreen_english": [
+  {
+   "scene": "S01",
+   "text": "DIDN'T",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S01",
+   "text": "= DID NOT",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S01",
+   "text": "DIDN'T (formula box)",
+   "words_not_spoken": [
+    "formula",
+    "box"
+   ],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S02",
+   "text": "I DIDN'T WATCH TV YESTERDAY.",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S03",
+   "text": "I DIDN'T WATCHED TV (marked wrong)",
+   "words_not_spoken": [
+    "marked",
+    "wrong"
+   ],
+   "wrong_form": true,
+   "scene_marks_wrong": true
+  },
+  {
+   "scene": "S03",
+   "text": "I DIDN'T WATCH TV",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S04",
+   "text": "SHE DIDN'T GO TO SCHOOL.",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S04",
+   "text": "SHE DIDN'T WENT TO SCHOOL. (marked wrong)",
+   "words_not_spoken": [
+    "marked",
+    "wrong"
+   ],
+   "wrong_form": true,
+   "scene_marks_wrong": true
+  },
+  {
+   "scene": "S05",
+   "text": "DIDN'T",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S05",
+   "text": "DID (ringed)",
+   "words_not_spoken": [
+    "ringed"
+   ],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S05",
+   "text": "WATCH",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S05",
+   "text": "GO",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  }
+ ],
+ "onscreen_arabic_count": 9
+}

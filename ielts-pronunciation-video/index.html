@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>تحدي نطق كلمات IELTS</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+  <div id="stageWrap">
+    <div id="stage">
+      <svg id="board" xmlns="http://www.w3.org/2000/svg"></svg>
+      <div id="caption" dir="rtl" lang="ar" hidden></div>
+    </div>
+  </div>
+  <div id="panel">
+    <h1>تحدي نطق كلمات IELTS</h1>
+    <div class="row">
+      <button id="play" aria-label="Play">▶ Play</button>
+      <button id="restart" aria-label="Restart">⟲ Restart</button>
+      <span id="time"><span id="cur">0:00.0</span> / <span id="dur">0:00.0</span></span>
+    </div>
+    <div id="seekWrap">
+      <input id="seek" type="range" min="0" max="1" step="0.01" value="0" aria-label="Timeline">
+      <div id="markers"></div>
+    </div>
+    <div class="row">
+      <label>Speed
+        <select id="speed">
+          <option value="0.5">0.5×</option><option value="0.75">0.75×</option><option value="1" selected>1×</option>
+          <option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2×</option>
+        </select>
+      </label>
+      <label>Format
+        <select id="aspect"><option value="v">9:16 · 1080×1920</option><option value="h">16:9 · 1920×1080</option></select>
+      </label>
+      <label><input id="caps" type="checkbox"> Arabic captions</label>
+      <label><input id="safe" type="checkbox"> Reels safe zone</label>
+    </div>
+    <ol id="scenes"></ol>
+    <p class="note">The original narration is the master clock: every drawing, the hand and the camera are computed from the audio time, so seeking anywhere rebuilds the exact frame.</p>
+  </div>
+</div>
+<audio id="audio" src="assets/audio/narration.wav" preload="auto"></audio>
+<script src="js/font.js"></script>
+<script src="js/hand.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/art.js"></script>
+<script src="js/transcript.js"></script>
+<script src="js/storyboard.js"></script>
+<script src="js/scenes.js"></script>
+<script src="js/player.js"></script>
+</body>
+</html>

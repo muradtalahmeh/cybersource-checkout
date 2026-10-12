@@ -1,0 +1,155 @@
+{
+ "run": "r5",
+ "files": {
+  "js/transcript.js": true,
+  "js/storyboard.js": true,
+  "docs/STORYBOARD.md": true,
+  "js/scenes.js": true
+ },
+ "structure": {
+  "audio_duration": 57,
+  "scenes": 4,
+  "scene_durations": [
+   16.62,
+   11.38,
+   18.3,
+   10.7
+  ],
+  "transcript_segments": 32,
+  "problems": [],
+  "fields_missing": []
+ },
+ "english_examples": [
+  {
+   "reference": "I didn't watch TV yesterday.",
+   "found_exact": true,
+   "start_diff_s": 0.01,
+   "flagged": false
+  },
+  {
+   "reference": "I didn't watched TV.",
+   "found_exact": true,
+   "start_diff_s": 0.0,
+   "flagged": true
+  },
+  {
+   "reference": "I didn't watch TV.",
+   "found_exact": true,
+   "start_diff_s": 0.0,
+   "flagged": false
+  },
+  {
+   "reference": "She didn't go to school.",
+   "found_exact": true,
+   "start_diff_s": 0.01,
+   "flagged": false
+  },
+  {
+   "reference": "She didn't went to school.",
+   "found_exact": true,
+   "start_diff_s": 0.58,
+   "flagged": false
+  }
+ ],
+ "wrong_forms_in_transcript": {
+  "watched_after_didnt": true,
+  "went_after_didnt": true
+ },
+ "transcript_flags": [
+  "\"للنفي\" inferred from context (topic = negation); ASR heard \"لنا فيه\", acoustically almost identical",
+  "sentence-level pass heard \"الفاعل\", phrase-level pass \"الفعل\"; forced scoring prefers \"الفاعل\", which is also what the rule needs (subject comes first)",
+  "\"انتبه منيح\" (pay close attention) inferred; ASR heard \"انت بهم نيح\" / \"انت بهم نير\"",
+  "INFERRED wrong form. Whisper writes \"I didn't watch TV\" here, but the narration calls this sentence wrong (\"لأنه هذا خطأ\") and then gives \"I didn't watch TV\" as the correct one. Forced scoring: watch beats watched by only 2.7 here vs 8.1 on the correct repeat (34.66 s) and 7.2 on 16.82 s, consistent with an audible -ed that the model autocorrects. Please confirm by listening.",
+  "confirmed \"did\" (not \"didn't\") by forced scoring: -2.1 vs -9.2",
+  "last word of the clip, apparently the start of a next part cut off by the 57 s end; ASR \"هلا\" (could be \"هلّأ\" = now, or \"هلا\"); scores too close to decide"
+ ],
+ "onscreen_english": [
+  {
+   "scene": "S01",
+   "text": "DIDN'T",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S01",
+   "text": "= DID NOT",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S02",
+   "text": "I DIDN'T WATCH TV YESTERDAY.",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S03",
+   "text": "I DIDN'T WATCHED TV (struck out, ✗ — marked wrong by the narration)",
+   "words_not_spoken": [
+    "struck",
+    "out",
+    "marked",
+    "wrong",
+    "by",
+    "the",
+    "narration"
+   ],
+   "wrong_form": true,
+   "scene_marks_wrong": true
+  },
+  {
+   "scene": "S03",
+   "text": "I DIDN'T WATCH TV.",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S03",
+   "text": "SHE DIDN'T GO TO SCHOOL.",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S03",
+   "text": "SHE DIDN'T WENT TO SCHOOL. (struck out, ✗ — marked wrong by the narration)",
+   "words_not_spoken": [
+    "struck",
+    "out",
+    "marked",
+    "wrong",
+    "by",
+    "the",
+    "narration"
+   ],
+   "wrong_form": true,
+   "scene_marks_wrong": true
+  },
+  {
+   "scene": "S04",
+   "text": "DID",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S04",
+   "text": "DIDN'T + WATCH",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S04",
+   "text": "DIDN'T + GO",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  }
+ ],
+ "onscreen_arabic_count": 15
+}

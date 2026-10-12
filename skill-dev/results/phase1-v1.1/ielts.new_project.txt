@@ -1,0 +1,5 @@
+project: /home/user/cybersource-checkout/skill-dev/results/phase1-v1.1/build/ielts
+audio:   pcm_s16le,44100,2 · 24.987188s
+sha256 510e125dd08e61081809f2d9d6d97158f442e7661218471161601dad69c50e17  /home/user/cybersource-checkout/ielts-pronunciation-video/assets/audio/original.mp3
+sha256 6768ceecc95a58c4d17db10883099e2b898a4a894bb3f6ac2d6bc694f9275518  /home/user/cybersource-checkout/skill-dev/results/phase1-v1.1/build/ielts/assets/audio/narration.wav
+sha256 510e125dd08e61081809f2d9d6d97158f442e7661218471161601dad69c50e17  /home/user/cybersource-checkout/skill-dev/results/phase1-v1.1/build/ielts/assets/audio/original.mp3

@@ -1,0 +1,16 @@
+skill audio-whiteboard-animation: 25 code files, missing paths 0, inventory 45/45 verbatim
+OK: 20 scenes cover 0–420.28s, all 114 segments assigned
+past-simple v: 20 scenes, 2584 strokes, 41 golden frames, problems: none
+past-simple v seektest: 8/8 identical
+past-simple h: 20 scenes, 2584 strokes, 41 golden frames, problems: none
+past-simple h seektest: 8/8 identical
+past-simple v 0.00-20.00: frames 600, audio offsets [0.0, 0.0, 0.0] ms, timing [np.float64(42.66), np.float64(41.42), np.float64(41.9), np.float64(40.36)], problems: none
+past-simple h 186.00-196.00: frames 300, audio offsets [0.0, 0.0, 0.0] ms, timing [np.float64(38.35), np.float64(40.39), np.float64(39.91), np.float64(39.89)], problems: none
+OK: 7 scenes cover 0–24.987188s, all 25 segments assigned
+ielts v: 7 scenes, 166 strokes, 15 golden frames, problems: none
+ielts v seektest: 8/8 identical
+ielts h: 7 scenes, 166 strokes, 15 golden frames, problems: none
+ielts h seektest: 8/8 identical
+ielts v 0.00-24.99: frames 750, audio offsets [0.0, 0.0, 0.0] ms, timing [np.float64(39.38), np.float64(39.85), np.float64(39.87), np.float64(39.34)], problems: none
+ielts h 0.00-24.99: frames 750, audio offsets [0.0, 0.0, 0.0] ms, timing [np.float64(39.69), np.float64(40.07), np.float64(40.01), np.float64(39.62)], problems: none
+results in /home/user/cybersource-checkout/skill-dev/results/phase1-v1.1

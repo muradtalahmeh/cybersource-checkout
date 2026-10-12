@@ -1,0 +1,157 @@
+{
+ "run": "r8",
+ "files": {
+  "js/transcript.js": true,
+  "js/storyboard.js": true,
+  "docs/STORYBOARD.md": true,
+  "js/scenes.js": true
+ },
+ "structure": {
+  "audio_duration": 57,
+  "scenes": 4,
+  "scene_durations": [
+   15.5,
+   21.55,
+   9.3,
+   10.65
+  ],
+  "transcript_segments": 27,
+  "problems": [],
+  "fields_missing": []
+ },
+ "english_examples": [
+  {
+   "reference": "I didn't watch TV yesterday.",
+   "found_exact": true,
+   "start_diff_s": 0.0,
+   "flagged": false
+  },
+  {
+   "reference": "I didn't watched TV.",
+   "found_exact": true,
+   "start_diff_s": 0.0,
+   "flagged": true
+  },
+  {
+   "reference": "I didn't watch TV.",
+   "found_exact": true,
+   "start_diff_s": 0.0,
+   "flagged": false
+  },
+  {
+   "reference": "She didn't go to school.",
+   "found_exact": true,
+   "start_diff_s": 0.01,
+   "flagged": false
+  },
+  {
+   "reference": "She didn't went to school.",
+   "found_exact": true,
+   "start_diff_s": 0.58,
+   "flagged": true
+  }
+ ],
+ "wrong_forms_in_transcript": {
+  "watched_after_didnt": true,
+  "went_after_didnt": true
+ },
+ "transcript_flags": [
+  "\"للنفي\" inferred: ASR heard \"لنا فيه\" (scored slightly higher than \"للنفي\"); chosen from context (the clip is about negation).",
+  "Spelling of \"مبارح\": ASR wrote \"بارح\" (both mean yesterday); minor.",
+  "Inferred: ASR output \"انت بهم نيح\"; read as \"انتبه منيح\" (pay close attention), best-scoring real-word candidate.",
+  "Deliberately wrong example, INFERRED. Whisper autocorrects it to \"watch\"; forced scoring gap watch-vs-watched is only 3.0 here vs 7.9 on the correct repeat at 34.66, and the teacher says \"لأنه هذا خطأ\" right after. Please confirm \"watched\".",
+  "ASR: \"نفس الأشياء مع الأفعال غير المنطمئ\"; corrected to \"غير المنتظمة\" (irregular verbs) from context.",
+  "Deliberately wrong example (marked by \"مش\"); Whisper decoded \"went\" directly, high confidence.",
+  "Phrase 47.46–48.24 looped in the phrase-level decode; sentence-level decode gives \"كلمة دد\". \"did\" scored above \"didn't\" — confirm the teacher says \"did\".",
+  "Last word is cut off at the end of the recording (\"هلأ/هلا\", the start of a next sentence). Kept as audio; no visual content attached."
+ ],
+ "onscreen_english": [
+  {
+   "scene": "S01",
+   "text": "DIDN'T",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S01",
+   "text": "= DID NOT",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S01",
+   "text": "DIDN'T (formula box)",
+   "words_not_spoken": [
+    "formula",
+    "box"
+   ],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S02",
+   "text": "I DIDN'T WATCH TV YESTERDAY.",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S02",
+   "text": "I DIDN'T WATCHED TV (struck, ✗)",
+   "words_not_spoken": [
+    "struck"
+   ],
+   "wrong_form": true,
+   "scene_marks_wrong": true
+  },
+  {
+   "scene": "S02",
+   "text": "I DIDN'T WATCH TV. (✓)",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S03",
+   "text": "SHE DIDN'T GO TO SCHOOL. (✓)",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S03",
+   "text": "SHE DIDN'T WENT TO SCHOOL. (struck, ✗)",
+   "words_not_spoken": [
+    "struck"
+   ],
+   "wrong_form": true,
+   "scene_marks_wrong": true
+  },
+  {
+   "scene": "S04",
+   "text": "DIDN'T (DID ringed)",
+   "words_not_spoken": [
+    "ringed"
+   ],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S04",
+   "text": "WATCH",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S04",
+   "text": "GO",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  }
+ ],
+ "onscreen_arabic_count": 11
+}

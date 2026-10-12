@@ -1,0 +1,9 @@
+   1.75 identical
+   4.75 identical
+   7.75 identical
+  10.74 identical
+  14.24 identical
+  17.24 identical
+  20.24 identical
+  23.74 identical
+8/8 identical; render 7.1 ms/frame, render+capture 242 ms/frame

@@ -1,0 +1,222 @@
+{
+ "run": "r3",
+ "files": {
+  "js/transcript.js": true,
+  "js/storyboard.js": true,
+  "docs/STORYBOARD.md": true,
+  "js/scenes.js": true
+ },
+ "structure": {
+  "audio_duration": 57,
+  "scenes": 4,
+  "scene_durations": [
+   18.4,
+   15.15,
+   13.4,
+   10.05
+  ],
+  "transcript_segments": 20,
+  "problems": [],
+  "fields_missing": []
+ },
+ "english_examples": [
+  {
+   "reference": "They weren't happy.",
+   "found_exact": true,
+   "start_diff_s": 1.06,
+   "flagged": false
+  },
+  {
+   "reference": "Were you tired yesterday?",
+   "found_exact": true,
+   "start_diff_s": 0.0,
+   "flagged": false
+  },
+  {
+   "reference": "I played football.",
+   "found_exact": true,
+   "start_diff_s": 0.86,
+   "flagged": false
+  },
+  {
+   "reference": "I didn't play football.",
+   "found_exact": true,
+   "start_diff_s": 0.0,
+   "flagged": true
+  },
+  {
+   "reference": "Did you play football?",
+   "found_exact": true,
+   "start_diff_s": 0.0,
+   "flagged": false
+  }
+ ],
+ "wrong_forms_in_transcript": {
+  "watched_after_didnt": false,
+  "went_after_didnt": false
+ },
+ "transcript_flags": [
+  "Clip starts mid-lesson; first word heard as \"أو\" (or) — forced-decode score favours it over \"و\"",
+  "\"على الفاعل\" (before the subject) inferred from the rule and the example; ASR heard \"على الفعل\" (before the verb) — the two scored almost equal",
+  "Arabic gloss reconstructed from ASR \"كنت عبان بارح\" / \"Kuntaban Mbarah\"",
+  "Arabic pass looped here; English pass + forced scoring clearly favour \"didn't play\" over \"didn't played\"",
+  "\"وبعدها الفاعل\" (then the subject) inferred: ASR heard \"الفعل … الفعل الأصلي\" twice, and the two readings scored almost equal; the rule and the example \"Did you play…\" support \"الفاعل\"",
+  "\"وتذكّر\" heard as \"وإذكر/ويدكر\"; \"ed\" heard as \"إيه … ID\" (51.0–51.5 decoded as unrelated words)",
+  "Recording ends mid-sentence (speech still at −18 dB in the last 0.2 s). ASR added \"شكراً\", likely a Whisper end-of-clip hallucination; the rest of the sentence is not in the audio"
+ ],
+ "onscreen_english": [
+  {
+   "scene": "S01",
+   "text": "THEY WEREN'T HAPPY.",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S01",
+   "text": "WAS / WERE + SUBJECT … ?",
+   "words_not_spoken": [
+    "subject"
+   ],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S01",
+   "text": "WERE YOU TIRED YESTERDAY?",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S01",
+   "text": "DID (struck through)",
+   "words_not_spoken": [
+    "struck",
+    "through"
+   ],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S02",
+   "text": "QUICK REVIEW",
+   "words_not_spoken": [
+    "quick",
+    "review"
+   ],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S02",
+   "text": "PAST",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S02",
+   "text": "NOW",
+   "words_not_spoken": [
+    "now"
+   ],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S02",
+   "text": "PAST SIMPLE",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S02",
+   "text": "PLAY → PLAYED",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S02",
+   "text": "I PLAYED FOOTBALL.",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S03",
+   "text": "DIDN'T + VERB",
+   "words_not_spoken": [
+    "verb"
+   ],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S03",
+   "text": "I DIDN'T PLAY FOOTBALL.",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S03",
+   "text": "DID + SUBJECT + VERB ?",
+   "words_not_spoken": [
+    "subject",
+    "verb"
+   ],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S03",
+   "text": "DID YOU PLAY FOOTBALL?",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S04",
+   "text": "REGULAR",
+   "words_not_spoken": [
+    "regular"
+   ],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S04",
+   "text": "+ED",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S04",
+   "text": "+D",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S04",
+   "text": "PLAY → PLAYED",
+   "words_not_spoken": [],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  },
+  {
+   "scene": "S04",
+   "text": "IRREGULAR",
+   "words_not_spoken": [
+    "irregular"
+   ],
+   "wrong_form": false,
+   "scene_marks_wrong": null
+  }
+ ],
+ "onscreen_arabic_count": 12
+}
