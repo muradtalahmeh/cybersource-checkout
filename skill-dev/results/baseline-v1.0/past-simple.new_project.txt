@@ -1,0 +1,4 @@
+project: /home/user/cybersource-checkout/skill-dev/results/baseline-v1.0/build/past-simple
+audio:   pcm_s16le,24000,1 · 420.280000s
+sha256 c94944cba0749c71eaacff0c5585dd10e4ac69650f45874ce4fe9a8016168475  /home/user/cybersource-checkout/past-simple-video/assets/audio/narration.wav
+sha256 c94944cba0749c71eaacff0c5585dd10e4ac69650f45874ce4fe9a8016168475  /home/user/cybersource-checkout/skill-dev/results/baseline-v1.0/build/past-simple/assets/audio/narration.wav

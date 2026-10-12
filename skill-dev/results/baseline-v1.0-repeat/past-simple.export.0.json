@@ -1,0 +1,72 @@
+{
+ "aspect": "v",
+ "from": 0.0,
+ "to": 20.0,
+ "render_ok": true,
+ "render_log": [
+  "wrote /tmp/exp_n6dth34y/clip.mp4 in 48 s"
+ ],
+ "video": {
+  "codec_name": "h264",
+  "codec_type": "video",
+  "width": 1080,
+  "height": 1920,
+  "r_frame_rate": "30/1",
+  "duration": "20.000000",
+  "nb_frames": "600"
+ },
+ "audio": {
+  "codec_name": "aac",
+  "codec_type": "audio",
+  "sample_rate": "48000",
+  "channels": 1,
+  "r_frame_rate": "0/0",
+  "duration": "20.000000",
+  "nb_frames": "939"
+ },
+ "format": {
+  "duration": "20.000000",
+  "size": "9335610"
+ },
+ "decode_errors": "",
+ "audio_offsets_ms": [
+  0.0,
+  0.0,
+  0.0
+ ],
+ "picture_timing": [
+  {
+   "frame": 119,
+   "t": 3.966666666666667,
+   "psnr_-6": 17.21,
+   "psnr_+0": 42.66,
+   "psnr_+6": 19.7,
+   "ok": true
+  },
+  {
+   "frame": 269,
+   "t": 8.966666666666667,
+   "psnr_-6": 16.44,
+   "psnr_+0": 41.42,
+   "psnr_+6": 14.71,
+   "ok": true
+  },
+  {
+   "frame": 419,
+   "t": 13.966666666666667,
+   "psnr_-6": 19.35,
+   "psnr_+0": 41.9,
+   "psnr_+6": 19.1,
+   "ok": true
+  },
+  {
+   "frame": 569,
+   "t": 18.966666666666665,
+   "psnr_-6": 22.38,
+   "psnr_+0": 40.36,
+   "psnr_+6": 19.34,
+   "ok": true
+  }
+ ],
+ "problems": []
+}

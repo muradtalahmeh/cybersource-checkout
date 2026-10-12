@@ -1,0 +1,16 @@
+[
+  {
+    "name": "past-simple",
+    "project": "past-simple-video",
+    "audio": "past-simple-video/assets/audio/narration.wav",
+    "title": "Past Simple",
+    "clips": [["v", 0, 20], ["h", 186, 196]]
+  },
+  {
+    "name": "ielts",
+    "project": "ielts-pronunciation-video",
+    "audio": "ielts-pronunciation-video/assets/audio/original.mp3",
+    "title": "IELTS pronunciation",
+    "clips": [["v", 0, 24.987188], ["h", 0, 24.987188]]
+  }
+]

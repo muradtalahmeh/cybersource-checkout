@@ -1,0 +1,152 @@
+{
+ "aspect": "v",
+ "audioDurationFile": 24.987188,
+ "audioDurationDeclared": 24.987188,
+ "storyboardIds": [
+  "S01",
+  "S02",
+  "S03",
+  "S04",
+  "S05",
+  "S06",
+  "S07"
+ ],
+ "sceneIds": [
+  "S01",
+  "S02",
+  "S03",
+  "S04",
+  "S05",
+  "S06",
+  "S07"
+ ],
+ "strokes": 166,
+ "penStrokes": 148,
+ "fades": 25,
+ "anims": 1,
+ "camKeys": 1,
+ "penOverlaps": 5,
+ "lastStrokeEnd": 24.81,
+ "perScene": [
+  {
+   "id": "S01",
+   "start": 0,
+   "end": 2.3,
+   "strokes": 25,
+   "drawnAfterHidden": 0
+  },
+  {
+   "id": "S02",
+   "start": 2.3,
+   "end": 5.2,
+   "strokes": 34,
+   "drawnAfterHidden": 0
+  },
+  {
+   "id": "S03",
+   "start": 5.2,
+   "end": 9.35,
+   "strokes": 21,
+   "drawnAfterHidden": 0
+  },
+  {
+   "id": "S04",
+   "start": 9.35,
+   "end": 13.6,
+   "strokes": 22,
+   "drawnAfterHidden": 0
+  },
+  {
+   "id": "S05",
+   "start": 13.6,
+   "end": 16.6,
+   "strokes": 20,
+   "drawnAfterHidden": 0
+  },
+  {
+   "id": "S06",
+   "start": 16.6,
+   "end": 20.05,
+   "strokes": 19,
+   "drawnAfterHidden": 0
+  },
+  {
+   "id": "S07",
+   "start": 20.05,
+   "end": 24.987188,
+   "strokes": 25,
+   "drawnAfterHidden": 0
+  }
+ ],
+ "sceneEndState": [
+  {
+   "id": "S01",
+   "t": 1.9499999999999997,
+   "visible": true,
+   "finishedPenStrokes": 12,
+   "handOk": true
+  },
+  {
+   "id": "S02",
+   "t": 4.8500000000000005,
+   "visible": true,
+   "finishedPenStrokes": 30,
+   "handOk": true
+  },
+  {
+   "id": "S03",
+   "t": 9,
+   "visible": true,
+   "finishedPenStrokes": 16,
+   "handOk": true
+  },
+  {
+   "id": "S04",
+   "t": 13.25,
+   "visible": true,
+   "finishedPenStrokes": 17,
+   "handOk": true
+  },
+  {
+   "id": "S05",
+   "t": 16.25,
+   "visible": true,
+   "finishedPenStrokes": 15,
+   "handOk": true
+  },
+  {
+   "id": "S06",
+   "t": 19.7,
+   "visible": true,
+   "finishedPenStrokes": 14,
+   "handOk": true
+  },
+  {
+   "id": "S07",
+   "t": 24.637188,
+   "visible": true,
+   "finishedPenStrokes": 21,
+   "handOk": true
+  }
+ ],
+ "errors": [],
+ "failedRequests": [],
+ "golden": {
+  "0.500": "2c323dbe1971b0cc0628e1dd2dcc18fb",
+  "1.380": "65ead17fccbcb2081c9a0ad9739f2fcd",
+  "1.950": "8dcaa8bcadd66e62711db8aca876936e",
+  "4.040": "e39871d17bfb73b3dfafeb74ae868a8f",
+  "4.850": "36ab7f2a63f830cb69b043e51401e90b",
+  "7.690": "a703684ed09e98784d5de29efd9cc0f6",
+  "9.000": "e6376c5932c9211625630ce1d7bcd05f",
+  "11.900": "4927d5939ae75a040bd7147e1325a2ce",
+  "13.250": "aac5f14b23282c378de34268891d26d2",
+  "15.400": "b31eb6a5680f30d461dfc1c82f0b25b7",
+  "16.250": "89818eb1b162116f85ae4fc3804e4cc9",
+  "18.670": "c478bcef5674e68b062e672de06824bc",
+  "19.700": "1d20a65e4715df9f6c1c825b6ea42cec",
+  "23.012": "e3b4877cd840b0602681f7fb6ca9677d",
+  "24.637": "65a216a0be86e5ab7026eec958b38e7d"
+ },
+ "problems": []
+}
