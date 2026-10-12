@@ -1,6 +1,6 @@
 # QA report — ref-fitness
 
-Video: `projects/ref-fitness/output/final.mp4` · generated 2026-10-12T16:54:39.228Z
+Video: `projects/ref-fitness/output/final.mp4` · generated 2026-10-12T17:17:04.674Z
 
 | Check | Result | Detail |
 |---|---|---|
