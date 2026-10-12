@@ -1,0 +1,89 @@
+{
+ "lang": "ar",
+ "model": "/root/.cache/reel-editorial/whisper-small/package/models/Xenova/whisper-small/",
+ "timestamps": false,
+ "pad": 0.15,
+ "segments": [
+  {
+   "start": 26.728,
+   "end": 38.568,
+   "text": "انك تختف من الصور وتتجنبيها لأنك ما بتحب الصور وانه تنحرم من اللعبة ولادك بالحديقة لأنك مش قادرة تلحكي وراه وانه يجي الصيف وضلت شي لها من اللبس ويضغطها",
+   "conf": 0.75,
+   "source": "silence",
+   "span": 0,
+   "loop": false
+  },
+  {
+   "start": 38.664,
+   "end": 40.637,
+   "text": "والدور على أشياء تخبي جسمك",
+   "conf": 0.809,
+   "source": "silence",
+   "span": 1,
+   "loop": false
+  },
+  {
+   "start": 40.733,
+   "end": 44.175,
+   "text": "هتعب الأولاني مؤقت وبصير أسهل مع الوقت",
+   "conf": 0.824,
+   "source": "silence",
+   "span": 2,
+   "loop": false
+  },
+  {
+   "start": 44.256,
+   "end": 49.069,
+   "text": "و لكن الثاني يظل الملاحك كثيرا. اختار صح و انت بتختاري.",
+   "conf": 0.622,
+   "source": "silence",
+   "span": 3,
+   "loop": false
+  },
+  {
+   "start": 49.191,
+   "end": 49.913,
+   "text": "أي صعب",
+   "conf": 0.668,
+   "source": "silence",
+   "span": 4,
+   "loop": false
+  },
+  {
+   "start": 50.08,
+   "end": 51.864,
+   "text": "ونحن نتعرف على أشياء أساسي",
+   "conf": 0.251,
+   "source": "silence",
+   "span": 5,
+   "loop": false
+  },
+  {
+   "start": 52.002,
+   "end": 52.313,
+   "text": "مه",
+   "conf": 0.201,
+   "source": "silence",
+   "span": 6,
+   "loop": false
+  },
+  {
+   "start": 52.424,
+   "end": 58.39,
+   "text": "و ستصل لك فيديو مجاني بشرحكي في تلعب الياضة من بيتك حتى لو انت مشغولي أسرع",
+   "conf": 0.596,
+   "source": "silence",
+   "span": 7,
+   "loop": false
+  },
+  {
+   "start": 58.472,
+   "end": 59.649,
+   "text": "أربع وشري إنساء",
+   "conf": 0.479,
+   "source": "silence",
+   "span": 8,
+   "loop": false
+  }
+ ]
+}
